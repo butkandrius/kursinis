@@ -140,43 +140,6 @@
       \field{title}{Deep Image Similarity Measurement Based on the Improved Triplet Network with Spatial Pyramid Pooling}
       \field{year}{2019}
     \endentry
-    \entry{Triplet_Network}{misc}{}
-      \name{author}{4}{}{%
-        {{hash=c3ed767149cc2e672ef6adaf7fbcbcb5}{%
-           family={Jiang},
-           familyi={J\bibinitperiod},
-           given={Wang},
-           giveni={W\bibinitperiod}}}%
-        {{hash=3421cd55be1f59dc6044dcf9b10a48fb}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Song},
-           giveni={S\bibinitperiod}}}%
-        {{hash=14a378deab411d4ce1a4d3b46e203951}{%
-           family={Thomas},
-           familyi={T\bibinitperiod},
-           given={Leung},
-           giveni={L\bibinitperiod}}}%
-        {{hash=bbd04a164cb85e762d49dcc434071cf9}{%
-           family={Chuck},
-           familyi={C\bibinitperiod},
-           given={Rosenberg},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{68f2ba4920677bbfde1c6b012a49ae4f}
-      \strng{fullhash}{68f2ba4920677bbfde1c6b012a49ae4f}
-      \strng{bibnamehash}{68f2ba4920677bbfde1c6b012a49ae4f}
-      \strng{authorbibnamehash}{68f2ba4920677bbfde1c6b012a49ae4f}
-      \strng{authornamehash}{68f2ba4920677bbfde1c6b012a49ae4f}
-      \strng{authorfullhash}{68f2ba4920677bbfde1c6b012a49ae4f}
-      \field{labelalpha}{JYT\textsuperscript {+}14}
-      \field{sortinit}{J}
-      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Learning fine-grained image similarity with deep ranking, In CVPR}
-      \field{year}{2014}
-    \endentry
     \entry{Performance_of_GPU}{misc}{}
       \name{author}{2}{}{%
         {{hash=b0de69ea4e7062ac8ef3021aa373cab4}{%
@@ -236,6 +199,38 @@
       \field{title}{Siamese Network Features for Image Matching}
       \field{year}{2016}
     \endentry
+    \entry{Face_recognition}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=c62e96f68033a3d3cd4639e35a2de4da}{%
+           family={Schroff},
+           familyi={S\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6cbb997a11c6922af719c32863261918}{%
+           family={Kalenichenko},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1e9a1d678032dfffb4e871a0f622e030}{%
+           family={Philbin},
+           familyi={P\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{474363fec59aa6cdd11f5b6b8275a8f2}
+      \strng{fullhash}{474363fec59aa6cdd11f5b6b8275a8f2}
+      \strng{bibnamehash}{474363fec59aa6cdd11f5b6b8275a8f2}
+      \strng{authorbibnamehash}{474363fec59aa6cdd11f5b6b8275a8f2}
+      \strng{authornamehash}{474363fec59aa6cdd11f5b6b8275a8f2}
+      \strng{authorfullhash}{474363fec59aa6cdd11f5b6b8275a8f2}
+      \field{labelalpha}{SKP15}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{FaceNet: A Unified Embedding for Face Recognition and Clustering}
+      \field{year}{2015}
+    \endentry
     \entry{Aerial_image_similarity}{misc}{}
       \name{author}{3}{}{%
         {{hash=817889e9c9d79624df977cf02ca1bcb1}{%
@@ -267,6 +262,63 @@
       \field{labeltitlesource}{title}
       \field{title}{Learning Aerial Image Similarity using Triplet Networks}
       \field{year}{2019}
+    \endentry
+    \entry{Learning_fine_grained_image}{misc}{}
+      \name{author}{8}{}{%
+        {{hash=d79c0a25d1b013fc9e5226b9b6d422db}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jiang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7dacbb5a6e92ab16944d46ba03705563}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=909cc514625b20b174a78f5dcd8e558a}{%
+           family={Leung},
+           familyi={L\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=585e983409c08560aae9325ed9359eb5}{%
+           family={Rosenberg},
+           familyi={R\bibinitperiod},
+           given={Chuck},
+           giveni={C\bibinitperiod}}}%
+        {{hash=cc8961a9b054836b38caa4d127297c1d}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jingbin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1e9a1d678032dfffb4e871a0f622e030}{%
+           family={Philbin},
+           familyi={P\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=31960f03389184b7f052f5b197cc9fdf}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a6cef5116f56a1f2d34427f5fedb8252}{%
+           family={Wu1},
+           familyi={W\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{560cf724d88da67f7425671f724d50b0}
+      \strng{fullhash}{560cf724d88da67f7425671f724d50b0}
+      \strng{bibnamehash}{560cf724d88da67f7425671f724d50b0}
+      \strng{authorbibnamehash}{560cf724d88da67f7425671f724d50b0}
+      \strng{authornamehash}{560cf724d88da67f7425671f724d50b0}
+      \strng{authorfullhash}{560cf724d88da67f7425671f724d50b0}
+      \field{labelalpha}{WSL\textsuperscript {+}14}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning Fine-grained Image Similarity with Deep Ranking}
+      \field{year}{2014}
     \endentry
   \enddatalist
 \endrefsection

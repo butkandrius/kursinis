@@ -2127,14 +2127,20 @@
     <bcf:datasource type="file" datatype="bibtex">bibliografija.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Triplet_Network</bcf:citekey>
+    <bcf:citekey order="1">Learning_fine_grained_image</bcf:citekey>
     <bcf:citekey order="2">Improved_triplet_network</bcf:citekey>
     <bcf:citekey order="3">Improved_triplet_network</bcf:citekey>
-    <bcf:citekey order="4">Aerial_image_similarity</bcf:citekey>
-    <bcf:citekey order="5">Siamese_signature_verifiction</bcf:citekey>
-    <bcf:citekey order="6">Siamese_Network</bcf:citekey>
-    <bcf:citekey order="7">Spatial_pyramid_pooling</bcf:citekey>
-    <bcf:citekey order="8">Performance_of_GPU</bcf:citekey>
+    <bcf:citekey order="4">Face_recognition</bcf:citekey>
+    <bcf:citekey order="5">Aerial_image_similarity</bcf:citekey>
+    <bcf:citekey order="6">Siamese_signature_verifiction</bcf:citekey>
+    <bcf:citekey order="7">Siamese_Network</bcf:citekey>
+    <bcf:citekey order="8">Spatial_pyramid_pooling</bcf:citekey>
+    <bcf:citekey order="9">Learning_fine_grained_image</bcf:citekey>
+    <bcf:citekey order="10">Learning_fine_grained_image</bcf:citekey>
+    <bcf:citekey order="11">Learning_fine_grained_image</bcf:citekey>
+    <bcf:citekey order="12">Learning_fine_grained_image</bcf:citekey>
+    <bcf:citekey order="13">Learning_fine_grained_image</bcf:citekey>
+    <bcf:citekey order="14">Performance_of_GPU</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

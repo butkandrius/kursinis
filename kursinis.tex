@@ -67,10 +67,10 @@ Vaizdų panašumo įvertinimas ir lyginimas tampa vis plačiau naudojamas ir sus
 \section{Trejetų ir Siamese tinklų tyrimų literatūros analizė}
 
 \subsection{Gilieji konvoliuciniai neuronų tinklai}
-Giliajame mokymese, šis tinklas yra klasė iš giliųjų neuronų tinklų, kuri dažniausiai naudojama pritaikant vaizdų atpažinimą. Tai yra algoritmas, kuris įvestyje pasiima nuotrauką, priskiria jai svorius ir tendencijas jos bruožų įvairiose nuotraukos dalyse ir sugeba pagal tai atskirti panašumus lyginant su kitomis nuotraukomis.
+Giliajame mokymese, šis tinklas yra klasė iš giliųjų neuronų tinklų, kuri dažniausiai naudojama pritaikant vaizdų atpažinimą. Tai yra algoritmas, kuris įvestyje pasiima vaidą (nuotrauką ar paveiksliuką), priskiria jam svorius ir jos bruožų tendencijas įvairiose nuotraukos dalyse ir sugeba pagal tai atskirti panašumus lyginant su kitomis nuotraukomis.
 
 \subsection{Trejetų tinklai}
-Trejetų tinklų modelis būvo pasiulytas 2014m., moksliniko Chang Wang\cite{Triplet_Network}. Modelio veikimo principas susideda iš trijų identiškų konvoliucinių neuroninių tinklų šakų, kurie tapusavyje dalijasi gautais svoriais. Kai trejetų tinklas įvestyje gauna tris pavyzdžius, išvestyje yra grąžinama dvejos tarpinės reikšmės, kurios nurodo atstumus lyginimus su pagrdine įvestimi ir kitomis dvejomis įvestimis, kurių rezultatas yra vektoriai.
+Trejetų tinklų modelis būvo pasiulytas 2014m., moksliniko Chang Wang\cite{Learning_fine_grained_image}. Modelio veikimo principas susideda iš trijų identiškų konvoliucinių neuroninių tinklų šakų, kurie tapusavyje dalijasi gautais svoriais. Kai trejetų tinklas įvestyje gauna tris pavyzdžius, išvestyje yra grąžinama dvejos tarpinės reikšmės, kurios nurodo atstumus lyginimus su pagrdine įvestimi ir kitomis dvejomis įvestimis, kurių rezultatas yra vektoriai.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/Triplet_network}
@@ -80,7 +80,7 @@ Trejetų tinklų modelis būvo pasiulytas 2014m., moksliniko Chang Wang\cite{Tri
 \pagebreak
 
 \subsubsection{Architektūra}
-Trejetų tinklų modelis įvedimo dalyje reikalauja trijų įvesčių tuo pačiu metu. Kiekvienas jų turi savo pavadinimą ir reikšmę tinkle, pagrindinis $x^a$, pozityvus $x^p$, negiamas $x^n$. Įvesties poros $x^a$ ir $x^p$ yra tos pačios kategorijos arba panašūs semantiškai įvestys. Tuo metu $x^a$ ir $x^n$ yra skirtingos kategorijos arba nepanašūs visai. Pasitelkiant funkcijas yra apskaičiuojama jų semantiniai panašumai atsumo erdvėje (nes jie yra pateikiami kaip vektoriai). Ši funkcija yra vadinama nuostolių funkcija, jos funkcija aprašyta žemiau. Kur parametras $\alpha$ rodo tarpą tarp $x^a$ ir $x^p$ bei $x^a$ ir $x^n$. $N$ reiškia skaičių nusakantį kiek trejetų įvesčių yra pateikiama. Tikslas yra pasiekti, kad $x^a$ ir $x^p$ būtų mažiau nei $x^a$ ir $x^n$.
+Trejetų tinklų modelis įvedimo dalyje reikalauja trijų įvesčių tuo pačiu metu. Kiekvienas jų turi savo pavadinimą ir reikšmę tinkle, pagrindinis $x^a$, pozityvus $x^p$, negiamas $x^n$. Įvesties poros $x^a$ ir $x^p$ yra tos pačios kategorijos arba panašūs semantiškai įvestys. Tuo metu $x^a$ ir $x^n$ yra skirtingos kategorijos arba nepanašūs visai. Pasitelkiant funkcijas yra apskaičiuojama jų semantiniai panašumai atsumo erdvėje (nes jie yra pateikiami kaip vektoriai). Ši funkcija yra vadinama nuostolių funkcija, jos funkcija aprašyta žemiau. Kur parametras $\alpha$ rodo tarpą tarp $x^a$ ir $x^p$ bei $x^a$ ir $x^n$. $N$ reiškia skaičių nusakantį kiek trejetų įvesčių yra pateikiama. Tikslas yra pasiekti, kad $x^a$ ir $x^p$ būtų mažiau nei $x^a$ ir $x^n$ \cite{Face_recognition}.
 
 \[loss = \sum_{x=1}^{N} max(d(x^a, x^p) - d(x^a, x^n) + \alpha, 0)\]
 Kur $d$ yra atstumo metrika, taip kad $d(x^a, x^p) < d(x^a, x^n)$, o $N$ yra skaičius trejetų.
@@ -136,20 +136,20 @@ Kelios įvertinimų metrikos yra naudojamos: panašumo tikslumas bei \emph{score
 
 \subsection{Treniruojami duomenys}
 Kadangi darbo tema susijusi su detalių vaizdų panašumu, kuris negali būti charakterizuotas pagal paveikslėlių žymes, buvo panaudota trejetų duomenų rinkinys įvertinant vaizdo panašumo modeliams.
-Buvo paimta 1000 populiariausių teksto užklausų su atrinktais trejetais $(x^a, x^p, x^n)$ su Google 50 paieškos rezultatų kiekvienai užklausai.
+Buvo paimta 1000 populiariausių teksto užklausų su atrinktais trejetais $(x^a, x^p, x^n)$ su Google 50 paieškos rezultatų kiekvienai užklausai \cite{Learning_fine_grained_image}.
 
 Efektyvumas yra nurodomas pirmoje lentelėje. "DeepRanking" parodytas lentelėje yra gilusis reitingavimo modelis treniruotas su 20% neigiamais pavyzdžiais. Pastebima, kad jokia individualus bruožas be treniravimo nepasiekia gerų rezultatų
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{img/Similarity_precision_diff_CNN}
-\caption{anašumo tikslumo metrikų rezultatai} % Antraštė įterpiama po paveikslėlio
+\caption{anašumo tikslumo metrikų rezultatai \cite{Learning_fine_grained_image}} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{img/Similarity_precision}
-\caption{Panašumo tikslumo metrikų rezultatai} % Antraštė įterpiama po paveikslėlio
+\caption{Panašumo tikslumo metrikų rezultatai \cite{Learning_fine_grained_image}} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 \pagebreak
