@@ -1,0 +1,51 @@
+
+Pasibraizome dabartiniu duombaziu UMLus
+Pabraizyti BC umplusi
+Turi buti kriteriaii pagrysti moksliniais straipsniais
+Parasyti bendriniu saku literalurso analize
+atsakyti klausima kas padaryta, ir kas nepadaryta
+Tikslas - surasti kuri duombaze geresne
+Issikelti uzdavinius
+Uzdavinys - turi buti apie analize(skaitytojui neidomu ka jus pasieket)
+
+Ivadas - apibrezti blockchain ir ir duombazes, mokslinis neapireztumas, sio darbo tikslas... ir uzdavinius siam darbui pasiekti
+Literaturos analize - ka padare kiti, kodel padare ir ko nepadare
+Tyrimo dalis - (duomenu bazes architektura) UML ai issikeliami kriterijai is literaturos analize, palyginti duombazes
+Simuliacija - jeigu bus laiko
+Rezultatai isvados
+Literaturos sarasas
+Priedai
+@misc{Triplet_Network,
+author={Wang Jiang and Song Yang and Leung Thomas and Rosenberg Chuck},
+title={Learning fine-grained image similarity with deep ranking, In CVPR},
+year={2014},
+}	
+
+@misc{Siamese_Network,
+author={Iaroslav Melekhov and Juho Kannala and Esa Rahtu},
+title={Siamese Network Features for Image Matching},
+year={2016},
+}
+
+@misc{Siamese_signature_verifiction,
+author={Jane Bromley and Isabelle Guyon and Yann LeCun and Eduard Sickinger and Roopak Shah},
+title={Signature Verification using a "Siamese"},
+Time Delay Neural Network},
+year={1990},
+}
+
+@misc{Spatial_pyramid_pooling,
+author={Kaiming He and Xiangyu Zhang and Shaoqing Ren and and Jian Sun},
+title={Spatial Pyramid Pooling in Deep Convolutional
+Networks for Visual Recognition
+},
+year={2014},
+}
+
+
+
+@misc{Person_identities_dataset,
+author={https://www.ee.cuhk.edu.hk/~xgwang/CUHK_identification.html},
+title={CUHK01 971 identities, 3884 images, manually cropped},
+year={2015}
+}
