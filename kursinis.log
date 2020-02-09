@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2020.2.2)  9 FEB 2020 16:12
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2020.2.2)  9 FEB 2020 17:59
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1356,27 +1356,21 @@ sta. To pasekoje tikslumas nuotraukų
  []
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 123--128
-\TU/texgyretermes(0)/m/n/12 klasifikacijos ar objektų identifikavime bus sumaži
-ntas ir nepataisomai sugadintas. Nors
+Underfull \hbox (badness 1248) in paragraph at lines 123--128
+\TU/texgyretermes(0)/m/n/12 uroniniuose tinkluose, konvoliuciniai sluoksniai ne
+reikaljau fiksuoto dydžio įvesties ir geba
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 123--128
-\TU/texgyretermes(0)/m/n/12 neuroniniuose tinkluose, konvoliuciniai sluoksniai 
-nereikaljau fiksuoto dydžio įvesties ir
+Underfull \hbox (badness 1565) in paragraph at lines 123--128
+\TU/texgyretermes(0)/m/n/12 sluoksniai privalo turėti fiksuoto dydžio įvestį dė
+l jų pačių apibrėžimo. Dėl to apriboji-
  []
 
 
-Underfull \hbox (badness 2269) in paragraph at lines 123--128
-\TU/texgyretermes(0)/m/n/12 geba generuoti specifinius bruožus vaizdo iš bet ko
-kio dydžio nuotraukų. Visgi, pilnai
- []
-
-
-Underfull \hbox (badness 1838) in paragraph at lines 123--128
-\TU/texgyretermes(0)/m/n/12 sujungti sluoksniai privalo turėti fiksuoto dydžio 
-įvestį dėl jų pačių apibrėžimo. Dėl to
+Underfull \hbox (badness 1418) in paragraph at lines 123--128
+\TU/texgyretermes(0)/m/n/12 mas fiksuoto dydžio nuotraukų ateina tik iš pilnai 
+sujungtų sluoksnių reikiamos ypatybės.
  []
 
 
@@ -1512,6 +1506,18 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
+
+Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1575,12 +1581,12 @@ Package logreq Info: Writing requests to 'kursinis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28051 strings out of 427272
- 559528 string characters out of 3146597
- 1092594 words of memory out of 3000000
- 32255 multiletter control sequences out of 15000+200000
+ 28056 strings out of 427272
+ 559813 string characters out of 3146597
+ 1092712 words of memory out of 3000000
+ 32260 multiletter control sequences out of 15000+200000
  545280 words of font info for 92 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,12n,104p,2313b,6136s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,12n,104p,2313b,6137s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on kursinis.pdf (17 pages).

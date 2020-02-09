@@ -1,4 +1,4 @@
-	\documentclass{VUMIFPSkursinis}
+\documentclass{VUMIFPSkursinis}
 \usepackage{algorithmicx}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -73,7 +73,7 @@ Trejetų tinklų modelis būvo pasiulytas 2014m., moksliniko Chang Wang\cite{Tri
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/Triplet_network}
-\caption{Trejeto tinklo mokymosi procesas} % Antraštė įterpiama po paveikslėlio
+\caption{Trejeto tinklo mokymosi procesas \cite{Improved_triplet_network}} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 \pagebreak
@@ -85,7 +85,7 @@ Trejetų tinklų modelis įvedimo dalyje reikalauja trijų įvesčių tuo pačiu
 Kur $d$ yra atstumo metrika, taip kad $d(x^a, x^p) < d(x^a, x^n)$, o $N$ yra skaičius trejetų.
 
 \subparagraph{Alternatyvios nuostolių funkcijos}
-Artima šiai funkcijai yra ši lygtis. Ji naudoja kvadratinį Euklido atstumą kaip atstumo metriką ir $\alpha > 0$, nurodanti ribą tarp dviejų vaizdų ir absoliučios sumos reikšmės.
+Artima šiai funkcijai yra ši lygtis. Ji naudoja kvadratinį Euklido \cite{Aerial_image_similarity} atstumą kaip atstumo metriką ir $\alpha > 0$, nurodanti ribą tarp dviejų vaizdų ir absoliučios sumos reikšmės.
 \[loss = \sum_{x=1}^{N} [||x^a - x^p|| - ||x^a - x^n|| + \alpha]\]
 
 \begin{figure}[H]
@@ -123,7 +123,7 @@ Standartinė išlaidų funkcija skirta mokymosi pavyzdžiui (x1,x2) yra pasiūly
 Gilieji konvoliuciniai tinklai reikalauja fiksuoto dydžio įvesties vaizdų. Tačiau realiame gyvenime nuotraukų ar paveiksliukų dydžiai nėra fiksuoti ir varijuoja plačiai.
 \linebreak
 Jeigu yra bandoma primiktynai pakeisti į reikiama dydį, nuotrauką karpant ar deformuojant, informacija, patalpinta nuotraukose bus prarasta. To pasekoje tikslumas nuotraukų klasifikacijos ar objektų identifikavime bus sumažintas ir nepataisomai sugadintas. Nors neuroniniuose tinkluose, konvoliuciniai sluoksniai nereikaljau fiksuoto dydžio įvesties ir geba generuoti specifinius bruožus vaizdo iš bet kokio dydžio nuotraukų. Visgi, pilnai sujungti sluoksniai privalo turėti fiksuoto dydžio įvestį dėl jų pačių apibrėžimo. Dėl to apribojimas fiksuoto dydžio nuotraukų ateina tik iš pilnai sujungtų sluoksnių reikiamos ypatybės.
-Viena iš šios problemos sprendimo būdų yra naudoti erdvinės piramidės talpinimą.
+Viena iš šios problemos sprendimo būdų yra naudoti erdvinės piramidės talpinimą\cite{Spatial_pyramid_pooling}.
 \linebreak
 
 The spatial pyramid pooling layer extracts the image features from the feature map through the 4 × 4, 2 × 2, and 1 × 1 square grid. Then, the SPP layer produces 21 = 16 + 4 + 1 different spatial bins and obtain a fixed size output by pooling each block. After the spatial pyramid pooling, any feature map can generate 5376-dimensional feature vector, where 5376 ＝ 21 × 256. The SPP layer pools the features and generates fixed length outputs, which are then fed into the fully-connected layers. Therefore, the convolution neural network with spatial

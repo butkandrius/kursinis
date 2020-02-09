@@ -1,16 +1,16 @@
-[1] Config.pm:304> INFO - This is Biber 2.13
-[2] Config.pm:307> INFO - Logfile is 'kursinis.blg'
-[142] biber-MSWIN64:315> INFO - === 
-[220] Biber.pm:375> INFO - Reading 'kursinis.bcf'
-[684] Biber.pm:905> INFO - Found 3 citekeys in bib section 0
-[766] Biber.pm:4196> INFO - Processing section 0
-[772] Utils.pm:75> INFO - Globbing data source 'bibliografija.bib'
-[806] Utils.pm:91> INFO - Globbed data source 'bibliografija.bib' to bibliografija.bib
-[869] Biber.pm:4373> INFO - Looking for bibtex format file 'bibliografija.bib' for section 0
-[883] bibtex.pm:1462> INFO - LaTeX decoding ...
-[913] bibtex.pm:1281> INFO - Found BibTeX data source 'bibliografija.bib'
-[1068] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1069] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1075] Biber.pm:4024> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'lt-LT'
-[1099] bbl.pm:648> INFO - Writing 'kursinis.bbl' with encoding 'UTF-8'
-[1110] bbl.pm:751> INFO - Output to kursinis.bbl
+[0] Config.pm:304> INFO - This is Biber 2.13
+[0] Config.pm:307> INFO - Logfile is 'kursinis.blg'
+[34] biber-MSWIN64:315> INFO - === 
+[56] Biber.pm:375> INFO - Reading 'kursinis.bcf'
+[186] Biber.pm:905> INFO - Found 6 citekeys in bib section 0
+[204] Biber.pm:4196> INFO - Processing section 0
+[206] Utils.pm:75> INFO - Globbing data source 'bibliografija.bib'
+[216] Utils.pm:91> INFO - Globbed data source 'bibliografija.bib' to bibliografija.bib
+[232] Biber.pm:4373> INFO - Looking for bibtex format file 'bibliografija.bib' for section 0
+[235] bibtex.pm:1462> INFO - LaTeX decoding ...
+[246] bibtex.pm:1281> INFO - Found BibTeX data source 'bibliografija.bib'
+[309] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[309] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[309] Biber.pm:4024> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'lt-LT'
+[318] bbl.pm:648> INFO - Writing 'kursinis.bbl' with encoding 'UTF-8'
+[323] bbl.pm:751> INFO - Output to kursinis.bbl
