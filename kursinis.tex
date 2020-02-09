@@ -49,6 +49,7 @@ Vaizdų panašumo įvertinimas ir lyginimas tampa vis plačiau naudojamas ir sus
 \sectionnonum{Tikslas}
 Šio darbo tikslas yra:
 \begin{itemize}
+\item{Išsiaiškinti pasirinkto trejetų tinklo modelio rezultatus, identifikuojant žmonių siluentus viešose erdvėse.}
 \item{Gautus vaizdų palyginimo rezultaus paanalizuoti detaliau, išskirti jų metrikas.}
 \item{Palyginti architektūrą su kitais neuronų tinklų modeliais.}
 \end{itemize}
@@ -56,9 +57,9 @@ Vaizdų panašumo įvertinimas ir lyginimas tampa vis plačiau naudojamas ir sus
 \sectionnonum{Uždaviniai}
 \thispagestyle{empty}
 \begin{enumerate}
-\item{Ištreniruoti trejetų tinklų modelį atpažįstant vaizdus.}
+\item{Ištreniruoti trejetų tinklų modelį atpažįstant žmonių siluetus, nufotografuotus viešoje vietoje.}
 \item{ Išskirti metrikas pagal kurias galėtų analizuoti gautus rezultatus, panaudojant trejetų tinklų modelį.}
-\item{Išskirti esamų tyrimų trūkumus ir galimas sritis ateities darbams.}
+\item{Išskirti pasirinkto tyrimo rezultatų trūkumus ir išsiaiškinti galimas sritis ateities darbams.}
 \item{Palyginti kitų neuronų tinklų modelių architektūras.}
 \end{enumerate}
 
@@ -217,15 +218,16 @@ Visgi ieškant literatūroje informacijos, kurioje būtų aprašyti sprendimo b�
 \end{enumerate}
 \subsection{Išvados}
 \begin{enumerate}
-\item{Yra sudėtinga lyginti trejetų tinklų ir Siamese modelius, nes jų architektūra gali varijuota. Teisingiau yra lyginti specialius jų sukurtus modelius vienas su kitu.}
-\item{Pasirinktas trejetų tinklų modelis parodė neblogus rezultatus lyginant žmonių eisenos kadrus.}
-\item{Naudojant vaizdo plokštę, o ne procesoriaus atmintį, ištreniruoti galima žymiai greičiau.}
+\item{Yra sudėtinga lyginti trejetų tinklų ir Siamese modelius, nes jų architektūra gali varijuota pagal tai kaip modelis yra įgyvendintas. Teisingiau yra lyginti specialius jų sukurtus modelius vienas su kitu.}
+\item{Pasirinktas trejetų tinklų modelis parodė neblogus rezultatus identifikuojant žmonių eisenos kadrus.}
+\item{Identifikuojant žmones nuotraukose susiduriama su rimtomis problemomis, kai to paties žmogaus nuotraukos skiriasi dėl pašalinių priežasčių. Kas lemia kad žmonių identifikacija yra sudėtingas procesas, kuris tam tikroms nuotraukoms neturi sprendimo būdų.}
 \end{enumerate}
 \subsection{Rekomendacijos ateities darbams}
 \begin{enumerate}
-\item{Atlikti Cassandra ir Hyperledger Fabric praeinamumo ir vėlavimo tyrimą atlikti naudojant tą pačią kompiuterinę įrangą.}
-\item{Atlikti Cassandra praeinamumus ir vėlavimo tyrimą keičiant konfigūraciją link transakcijų neprieštaringumo pusės ir lyginti lėtėjantį greitį su Hyperledger Fabric greičiu.}
-\item{Atlinkti greičio lyginimo tyrimus su skirtingomis Fabric ir Cassandra versijomis.}
+\item{Išbandyti kitą trejetų modelį su pasiūlytais būdais, kurie gebėtų dar geriau atpažinti žmonių siluetus}
+\item{Atlikti atpažinimo rezultatų analizę su kitis neuronų tinklais.}
+\item{Ištestuoti su daugiau duomenų rinkinių. Stebėti ir lyginti rezultatus}
+\item{Iškelti savo palyginimo metodą, kuris gebėtų teisingai identifikuoti žmones nuotraukose.}
 \end{enumerate}
 \pagebreak
 
