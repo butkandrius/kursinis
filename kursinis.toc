@@ -26,7 +26,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.}Įvertinimo funkcija}{8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.}Treniruojami duomenys}{9}%
+\contentsline {subsection}{\numberline {2.1.}Pasirenkami duomenis įvertinimui analizuoti}{9}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.}Trejetų tinklo vaizdų atpažinimo tyrimas ir vertinimas}{10}%
 \defcounter {refsection}{0}\relax 

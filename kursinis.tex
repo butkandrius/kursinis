@@ -98,7 +98,7 @@ Artima šiai funkcijai yra ši lygtis. Ji naudoja kvadratinį Euklido \cite{Aeri
 
 Šis neuroninių tinklų architektūrinis sprendimas padeda apmokyti duomenų klasifikavimą išskaidant duomenis pagal panašumus ir skirtumus. Jų metu keli lygiagretūs gileiji neuroniai tinklai yra apmokami bei tuo pačiu metu jie dalijasi svoriais vieni su kitu treniruojant tinklą. Trejetų tinkle tikslas yra sukurti trejetus, kurie susideda iš pagrindinio $p^a$, teigiamio $x^p$, neigiamio $p^n$ − įvesties elementų. Pagrindinis elementas, tai kažkokia įvestis (nuotrauka, paveiksliukas, muzikos įrašas ir t.t), kuriai mes bandome rasti atitikimą iš kitos įvesties. Teigiama įvestis – panašus elementas atitinkamai pagrindiniai nuotraukai. Tuo tarpu neigiamas elementas skaitosi tas, kuris neturi panašumų su pagrindine nuotrauka. Neuroninai tinklai apskaičiuoja  $\pi : f(\pi) \in$
 Šie trys elementai yra įvedami nepriklausomai vienas nuo kito į  tris identiškus giliuosius neuroninius tinklus, kurie dalijasi vienoda architektūra ir parametrais. Jų metu yra apskaičiuojami atstumai tarp šių elementų. Šiam apskaičiavimui yra naudojama praradimo funkcija.
-\linebreak
+\newline
 Įmanomi rezultatai trjetų tinkle:
 \begin{itemize}
 \item{Lengvas trejatas: trejetai, kurie turi nuostolį, reikšme 0, nes $d(x^a, x^p) + \alpha < d(x^a, x^p)$}
@@ -122,20 +122,19 @@ Standartinė išlaidų funkcija skirta mokymosi pavyzdžiui (x1,x2) yra pasiūly
 
 \subsection{Nefiksuoto dydžio vaizdai konvoliuciniuose tinkluose}
 Gilieji konvoliuciniai tinklai reikalauja fiksuoto dydžio įvesties vaizdų. Tačiau realiame gyvenime nuotraukų ar paveiksliukų dydžiai nėra fiksuoti ir varijuoja plačiai.
-\linebreak
+\newline
 Jeigu yra bandoma primiktynai pakeisti į reikiama dydį, nuotrauką karpant ar deformuojant, informacija, patalpinta nuotraukose bus prarasta. To pasekoje tikslumas nuotraukų klasifikacijos ar objektų identifikavime bus sumažintas ir nepataisomai sugadintas. Nors neuroniniuose tinkluose, konvoliuciniai sluoksniai nereikaljau fiksuoto dydžio įvesties ir geba generuoti specifinius bruožus vaizdo iš bet kokio dydžio nuotraukų. Visgi, pilnai sujungti sluoksniai privalo turėti fiksuoto dydžio įvestį dėl jų pačių apibrėžimo. Dėl to apribojimas fiksuoto dydžio nuotraukų ateina tik iš pilnai sujungtų sluoksnių reikiamos ypatybės.
 Viena iš šios problemos sprendimo būdų yra naudoti erdvinės piramidės talpinimą\cite{Spatial_pyramid_pooling}.
-\linebreak
-
-The spatial pyramid pooling layer extracts the image features from the feature map through the 4 × 4, 2 × 2, and 1 × 1 square grid. Then, the SPP layer produces 21 = 16 + 4 + 1 different spatial bins and obtain a fixed size output by pooling each block. After the spatial pyramid pooling, any feature map can generate 5376-dimensional feature vector, where 5376 ＝ 21 × 256. The SPP layer pools the features and generates fixed length outputs, which are then fed into the fully-connected layers. Therefore, the convolution neural network with spatial
+\newline
+Šis būdas ištraukia vaizdo bruožus iš bruožų žemėlapio (angl. map) per $4 x 4$, $2 x 2$ ir $1 x 1$ kvadratų tinklelio. Tada SPP sluoksnis pateikia $16 + 4 + 1 = 21$ skirtingus aruodus (angl. bin) ir gauna fiksuoto dydžio išvestį kviečiant kviekvieną bloką. Po erdvinės piramidės talpinimo būdo išgavimo, bet kuris bruožų žemėlapis gali generuoti 5736 dimensijų ypatybių vektorius, kur $5736 = 24 x 26$. SPP sluoksnis pasiima ypatybes ir generuoja  fiksuoto dydžio išvestis, kuris galiausiai yra perduodamas į pilnai sujungtus sluoksnius.
 \pagebreak
 
 \section{Įvertinimo funkcija}
-Kelios įvertinimų metrikos yra naudojamos: panašumo tikslumas bei \emph{score-at-top-K}, kai $K = 30$. Panašumo tikslumas yra išreiškiamas procentaliai pagal tai, kiek trejetų buvo korektiškai sureitinguota. Sakykime, kad turime trejetą, su šiais įvesties parametrais $tt = (x^a, x^p, x^n)$, kur $x^p$ turėtų būti arčiau(panašesnis)šalia $x^a$. Laikant, kad $x^a$ yra įvesties užklausa žiūrime į rezultatus kitų įvesties duomenų. Jeigu $x^p$ yra reitinguojamas aukščiau nei $x^n$, tai tada teigiame, kad atitinkamas trejetas yra sureitinguotas teisingai. Kita mums reikalinga metrika, kuri buvo užsiminta anksčiau \emph{score-at-top-K}. Jis nusako skaičių teisingai sureitinguotų trejetų bei atimant iš šio skaičiaus, kuris nusako neteisingai sureitinguotus trejetus iš pogrupio trejetų, kurių reitingas yra didesnis, nei kintamasis $K$. Pogrupis yra pasirenkamas tokia tvarka: kiekvienam užklausos paveikslėliui iš duomenų aibės, ištraukia 1000 naujų paveikslėlių iš tos pačios teksto užklausos ir yra bandoma taip reitinguoti juos, pasitelkiant išmoktas metrikas. Trejeto reitingas yra aukštesnis negu $K$, jeigu jo $x^p$ arba $x^n$ yra tarp geriasiai reitinguojamų $K$ kaimynų iš užklausos su paveikslėlių $x^a$.
+Kelios įvertinimų metrikos yra naudojamos: panašumo tikslumas bei \emph{score-at-top-K}, kai $K = 30$. Panašumo tikslumas yra išreiškiamas procentaliai pagal tai, kiek trejetų buvo korektiškai sureitinguota. Sakykime, kad turime trejetą, su šiais įvesties parametrais $tt = (x^a, x^p, x^n)$, kur $x^p$ turėtų būti arčiau(panašesnis)šalia $x^a$. Laikant, kad $x^a$ yra įvesties užklaus,a žiūrime į rezultatus kitų įvesties duomenų. Jeigu $x^p$ yra reitinguojamas aukščiau nei $x^n$, tai tada teigiame, kad atitinkamas trejetas yra sureitinguotas teisingai. Kita mums reikalinga metrika, kuri buvo užsiminta anksčiau \emph{score-at-top-K}. Jis nusako skaičių teisingai sureitinguotų trejetų bei atimant iš jo skaičių, kuris nusako neteisingai sureitinguotus trejetus iš pogrupio trejetų, kurių reitingas yra didesnis, nei kintamasis $K$. Pogrupis yra pasirenkamas tokia tvarka: kiekvienam užklausos paveikslėliui iš duomenų aibės, ištraukia 1000 naujų paveikslėlių iš tos pačios teksto užklausos ir yra bandoma taip reitinguoti juos, pasitelkiant išmoktas metrikas. Jei trejetų reitingas yra aukštesnis negu $K$, jeigu jo $x^p$ arba $x^n$ tada yra tarp geriausiai reitinguojamų $K$ kaimynų iš užklausos su paveikslėliais $x^a$.
 \pagebreak
 
-\subsection{Treniruojami duomenys}
-Kadangi darbo tema susijusi su detalių vaizdų panašumu, kuris negali būti charakterizuotas pagal paveikslėlių žymes, buvo panaudota trejetų duomenų rinkinys įvertinant vaizdo panašumo modeliams.
+\subsection{Pasirenkami duomenis įvertinimui analizuoti}
+Kadangi darbo tema susijusi su detalių vaizdų panašumu, kuris negali būti charakterizuotas pagal paveikslėlių žymes, buvo panaudota trejetų duomenų rinkinys įvertinant vaizdo panašumus modeliams.
 Buvo paimta 1000 populiariausių teksto užklausų su atrinktais trejetais $(x^a, x^p, x^n)$ su Google 50 paieškos rezultatų kiekvienai užklausai \cite{Learning_fine_grained_image}.
 
 Efektyvumas yra nurodomas pirmoje lentelėje. "DeepRanking" parodytas lentelėje yra gilusis reitingavimo modelis treniruotas su 20% neigiamais pavyzdžiais. Pastebima, kad jokia individualus bruožas be treniravimo nepasiekia gerų rezultatų
@@ -160,21 +159,21 @@ Norint pagerinti atsirandančias vaizdų problemas, aprašytas viršuje
 
 \subsection{Treniravimo ir testavimo aplinka}
 Trejetų tinklo modelis buvo treniruoamas naudojant Lenovo Y-700 kompiuterį su šiomis specifikacijomis: CPU i7 6700K (4 branduolių), 8GB RAM, GPU Nvidia GTX 960m (4GB RAM). Norint pasileisti trejetų modelį būtent šiam kompiuteriui (priklausomai nuo mašinos tai gali skirtis) buvo atsisiųsta Nvidia CUDA programinė įranga su tikslu, kad modelio treniravimas būtų vykdomas pasitelkiant vaizdo plokštę, o ne procesorių.
-\linebreak
+\newline
 Priežastis kodėl buvo pasirinkta vaizdo plokštė yra todėl, kad gilusis mokymasis yra intensyvi skaičiavimo užduotis. Į gilųjį mokymasi įeina didžiuliai matricų skaičiavimai (ypač sandauga) ir kitos operacijos, kurios gali veikti paraleliai todėl vaizdo plokštė ateina į pagalbą, nes viena vaizdo plokštė gali turėti tūkstančius branduolių, tuo metu procesorius turi žymiai mažiau branduolių, nors jie ir žymiai greitesni negu vaizdo plokštės \cite{Performance_of_GPU}.
-\linebreak
+\newline
 Pasirenktas trejetų tinklų modelis yra implementuotas naudojant Tensorflow karkasą, Python 3.5.1.
-\linebreak
+\newline
 Vaizdų duomenų rinkinyje buvo 3884 nuotraukos, kuriose jau buvo surikiuotos teisinga eilės tvarka, kur pirma nuotrauka pagrindinė, antra nuotrauka - teigiama (kuri yra panaši į pagrindinę) bei neigiama (nepanaši į pagrindinę nuotrauką) ir tokia eilės tvarka yra išsidėstę visos kitos nuotraukos.
 Ištreniravus šiuos duomenis yra bandoma analizuoti modelio tikslumą imant vaizdų pavyzdžius iš testinio duomenų rinkinio.
 
 \subsection{VGG16 tinklo modelis}
 Panaudota architektūra naudoja VGG16 tinklo bazės sluoksnius klasifikavimui todėl tik labai panašūs vaizdai gali būti naudojami duomenų treniravimui tam, kad pagerinti tinklo atlikimą bei išsaugoti skaičiavimo išteklius.
-\linebreak
+\newline
 VGG16 yra konvoliucinių neuroninių tinklų modelis, išrastas K. Simonian ir A. Zisserman (Oksfordo universitetas). Modelis sugeba pasiekti 92.7\% top-5 testų tikslumą (treniravimo duomenys pasiimti iš ImageNet). VGG16 buvo treniruojamas savaitę iš savaitės naudojant Nvidia Titan Black vaizdo plokščių šeimas.
 \subsection{Tyrimo rezultatai}
 Šiame darbe buvo bandyta atpažinti detalius vaizdus, naudojant vaizdų duomenų rinkinį CUHK01. Šiame duomenų rinkinyje yra pavaizduota 3884 viešose vietose einančių pėsčiųjų kadrai. Todėl naudojant ši duomenų rinkinį buvo analizuojama, kaip su pasirinktu trejetų modeliu seksis atpažinti skirtingus žmogaus kadrus, kurie buvo nufotografuoti įvairiai -  iš kelių pusių, iš nugaros ir priekio, esant skiringai žmogaus eisenos pozicijai, skirtingam apšvietimui ir kontrastamas, įsiterpiant kitiems objektams prie pėsčiojo.
-\linebreak
+\newline
 Ištreniravus trejetų tinklą su pasirinktu duomenų rinkiniu ir pradėjus testuoti jo rezultatus, gavau 85,7\% tikslumo rezultatą. Tai yra gan aukštas įvertinimas, nes atpažinti to paties pėsčiojo skirtingus kadras nėra lengviausia užduotis, nes susiduriame su kliūtimis, aprašytomis anksčiau.
 
 \begin{figure}[H]
@@ -213,7 +212,6 @@ Visgi ieškant literatūroje informacijos, kurioje būtų aprašyti sprendimo b�
 \begin{enumerate}
 \item{Trejetų tinklai palyginti su Siamese modeliu, išskirti trūkumai ir privalumai.}
 \item{Išskirti esamų tyrimų trūkumai}
-\item{Išskirti esamų tyrimų trūkumai.}
 \item{Aprašyti trjetų tinklų pasirinktas architektūros modelis.}
 \end{enumerate}
 \subsection{Išvados}

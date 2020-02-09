@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2020.2.2)  9 FEB 2020 19:20
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2020.2.2)  9 FEB 2020 20:02
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1331,151 +1331,12 @@ File: img/Triplet_network_branchCNN.png Graphic file (type bmp)
  [5]
 File: img/Siamese.png Graphic file (type bmp)
 <img/Siamese.png>
- [6]
-Underfull \hbox (badness 10000) in paragraph at lines 124--129
-[]\TU/texgyretermes(0)/m/n/12 Gilieji konvoliuciniai tinklai reikalauja fiksuot
-o dydžio įvesties vaizdų. Tačiau
- []
-
-
-Underfull \hbox (badness 5147) in paragraph at lines 124--129
-\TU/texgyretermes(0)/m/n/12 realiame gyvenime nuotraukų ar paveiksliukų dydžiai
- nėra fiksuoti ir varijuoja plačiai.
- []
-
-
-Underfull \hbox (badness 1888) in paragraph at lines 124--129
-\TU/texgyretermes(0)/m/n/12 Jeigu yra bandoma primiktynai pakeisti į reikiama d
-ydį, nuotrauką karpant ar deformuo-
- []
-
-
-Underfull \hbox (badness 2573) in paragraph at lines 124--129
-\TU/texgyretermes(0)/m/n/12 jant, informacija, patalpinta nuotraukose bus prara
-sta. To pasekoje tikslumas nuotraukų
- []
-
-
-Underfull \hbox (badness 1248) in paragraph at lines 124--129
-\TU/texgyretermes(0)/m/n/12 uroniniuose tinkluose, konvoliuciniai sluoksniai ne
-reikaljau fiksuoto dydžio įvesties ir geba
- []
-
-
-Underfull \hbox (badness 1565) in paragraph at lines 124--129
-\TU/texgyretermes(0)/m/n/12 sluoksniai privalo turėti fiksuoto dydžio įvestį dė
-l jų pačių apibrėžimo. Dėl to apriboji-
- []
-
-
-Underfull \hbox (badness 1418) in paragraph at lines 124--129
-\TU/texgyretermes(0)/m/n/12 mas fiksuoto dydžio nuotraukų ateina tik iš pilnai 
-sujungtų sluoksnių reikiamos ypatybės.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--129
-
- []
-
-Missing character: There is no ＝ in font [texgyretermes-regular.otf]/OT:script=
-latn;language=DFLT;mapping=tex-text;!
-[7] [8]
+ [6] [7] [8]
 File: img/Similarity_precision_diff_CNN.png Graphic file (type bmp)
 <img/Similarity_precision_diff_CNN.png>
 File: img/Similarity_precision.png Graphic file (type bmp)
 <img/Similarity_precision.png>
- [9]
-Underfull \hbox (badness 5245) in paragraph at lines 162--170
-\TU/texgyretermes(0)/m/n/12 mis specifikacijomis: CPU i7 6700K (4 branduolių), 
-8GB RAM, GPU Nvidia GTX
- []
-
-
-Underfull \hbox (badness 2856) in paragraph at lines 162--170
-\TU/texgyretermes(0)/m/n/12 960m (4GB RAM). Norint pasileisti trejetų modelį bū
-tent šiam kompiuteriui (priklauso-
- []
-
-
-Underfull \hbox (badness 1383) in paragraph at lines 162--170
-\TU/texgyretermes(0)/m/n/12 lu, kad modelio treniravimas būtų vykdomas pasitelk
-iant vaizdo plokštę, o ne procesorių.
- []
-
-
-Underfull \hbox (badness 1590) in paragraph at lines 162--170
-\TU/texgyretermes(0)/m/n/12 syvi skaičiavimo užduotis. Į gilųjį mokymasi įeina 
-didžiuliai matricų skaičiavimai (ypač
- []
-
-
-Underfull \hbox (badness 2671) in paragraph at lines 162--170
-\TU/texgyretermes(0)/m/n/12 ri žymiai mažiau branduolių, nors jie ir žymiai gre
-itesni negu vaizdo plokštės [KK18].
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--175
-[]\TU/texgyretermes(0)/m/n/12 Panaudota architektūra naudoja VGG16 tinklo bazės
- sluoksnius klasifi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--175
-\TU/texgyretermes(0)/m/n/12 kavimui todėl tik labai panašūs vaizdai gali būti n
-audojami duomenų treni-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--175
-\TU/texgyretermes(0)/m/n/12 ravimui tam, kad pagerinti tinklo atlikimą bei išsa
-ugoti skaičiavimo išteklius.
- []
-
-
-Underfull \hbox (badness 1028) in paragraph at lines 172--175
-\TU/texgyretermes(0)/m/n/12 (Oksfordo universitetas). Modelis sugeba pasiekti 9
-2.7% top-5 testų tikslumą (treniravimo
- []
-
-
-Underfull \hbox (badness 1033) in paragraph at lines 176--179
-[]\TU/texgyretermes(0)/m/n/12 Šiame darbe buvo bandyta atpažinti detalius vaizd
-us, naudojant vaizdų duomenų rin-
- []
-
-
-Underfull \hbox (badness 3158) in paragraph at lines 176--179
-\TU/texgyretermes(0)/m/n/12 kinį CUHK01. Šiame duomenų rinkinyje yra pavaizduot
-a 3884 viešose vietose einan-
- []
-
-
-Underfull \hbox (badness 1163) in paragraph at lines 176--179
-\TU/texgyretermes(0)/m/n/12 čių pėsčiųjų kadrai. Todėl naudojant ši duomenų rin
-kinį buvo analizuojama, kaip su pa-
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 176--179
-\TU/texgyretermes(0)/m/n/12 sirinktu trejetų modeliu seksis atpažinti skirtingu
-s žmogaus kadrus, kurie buvo nufotogra-
- []
-
-
-Underfull \hbox (badness 1648) in paragraph at lines 176--179
-\TU/texgyretermes(0)/m/n/12 fuoti įvairiai - iš kelių pusių, iš nugaros ir prie
-kio, esant skiringai žmogaus eisenos po-
- []
-
-
-Underfull \hbox (badness 1502) in paragraph at lines 176--179
-\TU/texgyretermes(0)/m/n/12 zicijai, skirtingam apšvietimui ir kontrastamas, įs
-iterpiant kitiems objektams prie pėsčiojo.
- []
-
-[10]
+ [9] [10]
 File: img/Frame_diff.png Graphic file (type bmp)
 <img/Frame_diff.png>
 File: img/Wrongly_detected.png Graphic file (type bmp)
@@ -1483,7 +1344,7 @@ File: img/Wrongly_detected.png Graphic file (type bmp)
 File: img/image_diff_examples.png Graphic file (type bmp)
 <img/image_diff_examples.png>
 
-Overfull \hbox (19.52832pt too wide) in paragraph at lines 200--201
+Overfull \hbox (19.52832pt too wide) in paragraph at lines 199--200
  [][] 
  []
 
