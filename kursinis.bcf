@@ -2134,6 +2134,7 @@
     <bcf:citekey order="5">Siamese_signature_verifiction</bcf:citekey>
     <bcf:citekey order="6">Siamese_Network</bcf:citekey>
     <bcf:citekey order="7">Spatial_pyramid_pooling</bcf:citekey>
+    <bcf:citekey order="8">Performance_of_GPU</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

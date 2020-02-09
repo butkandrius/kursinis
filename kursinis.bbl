@@ -177,6 +177,33 @@
       \field{title}{Learning fine-grained image similarity with deep ranking, In CVPR}
       \field{year}{2014}
     \endentry
+    \entry{Performance_of_GPU}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=b0de69ea4e7062ac8ef3021aa373cab4}{%
+           family={Kayid},
+           familyi={K\bibinitperiod},
+           given={Amr},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2c4fa8a14d08238ff8d40a5f6fecf2d4}{%
+           family={Khaled},
+           familyi={K\bibinitperiod},
+           given={Yasmeen},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{c50e3e9babf8c76fe95088bc2125c2e4}
+      \strng{fullhash}{c50e3e9babf8c76fe95088bc2125c2e4}
+      \strng{bibnamehash}{c50e3e9babf8c76fe95088bc2125c2e4}
+      \strng{authorbibnamehash}{c50e3e9babf8c76fe95088bc2125c2e4}
+      \strng{authornamehash}{c50e3e9babf8c76fe95088bc2125c2e4}
+      \strng{authorfullhash}{c50e3e9babf8c76fe95088bc2125c2e4}
+      \field{labelalpha}{KK18}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Performance of CPUs/GPUs for Deep Learning workloads}
+      \field{year}{2018}
+    \endentry
     \entry{Siamese_Network}{misc}{}
       \name{author}{3}{}{%
         {{hash=3ec58384dc1e1e5df143f3ebaece3cd8}{%

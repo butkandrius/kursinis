@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2020.2.2)  9 FEB 2020 18:10
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2020.2.2)  9 FEB 2020 18:23
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1386,15 +1386,9 @@ File: img/Similarity_precision_diff_CNN.png Graphic file (type bmp)
 File: img/Similarity_precision.png Graphic file (type bmp)
 <img/Similarity_precision.png>
  [9]
-Underfull \hbox (badness 5592) in paragraph at lines 162--170
-[]\TU/texgyretermes(0)/m/n/12 Trejetų tinklo modelis buvo treniruoamas naudojan
-t Lenovo Y-700 kompiuterį su
- []
-
-
-Underfull \hbox (badness 2644) in paragraph at lines 162--170
-\TU/texgyretermes(0)/m/n/12 šiomis specifikacijomis: CPU i7 6700K (4 branduolių
-), 8GB RAM, GPU Nvidia GTX
+Underfull \hbox (badness 5245) in paragraph at lines 162--170
+\TU/texgyretermes(0)/m/n/12 mis specifikacijomis: CPU i7 6700K (4 branduolių), 
+8GB RAM, GPU Nvidia GTX
  []
 
 
@@ -1410,15 +1404,15 @@ iant vaizdo plokštę, o ne procesorių.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--170
-\TU/texgyretermes(0)/m/n/12 Priežastis kodėl buvo pasirinkta vaizdo plokštė efe
-ktyvumas
+Underfull \hbox (badness 1590) in paragraph at lines 162--170
+\TU/texgyretermes(0)/m/n/12 syvi skaičiavimo užduotis. Į gilųjį mokymasi įeina 
+didžiuliai matricų skaičiavimai (ypač
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--170
-\TU/texgyretermes(0)/m/n/12 geresnis, nes sugebama ištraukti didesnio dydžio at
-mintį.
+Underfull \hbox (badness 2671) in paragraph at lines 162--170
+\TU/texgyretermes(0)/m/n/12 ri žymiai mažiau branduolių, nors jie ir žymiai gre
+itesni negu vaizdo plokštės [KK18].
  []
 
 
@@ -1481,9 +1475,9 @@ Underfull \hbox (badness 1502) in paragraph at lines 176--179
 iterpiant kitiems objektams prie pėsčiojo.
  []
 
+[10]
 File: img/Frame_diff.png Graphic file (type bmp)
 <img/Frame_diff.png>
-[10]
 File: img/Wrongly_detected.png Graphic file (type bmp)
 <img/Wrongly_detected.png>
 File: img/image_diff_examples.png Graphic file (type bmp)
@@ -1494,6 +1488,10 @@ Overfull \hbox (19.52832pt too wide) in paragraph at lines 200--201
  []
 
 [11] [12] [13] [14] [15]
+
+Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
@@ -1581,10 +1579,10 @@ Package logreq Info: Writing requests to 'kursinis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28056 strings out of 427272
- 559813 string characters out of 3146597
- 1092796 words of memory out of 3000000
- 32260 multiletter control sequences out of 15000+200000
+ 28058 strings out of 427272
+ 559915 string characters out of 3146597
+ 1092862 words of memory out of 3000000
+ 32262 multiletter control sequences out of 15000+200000
  545280 words of font info for 92 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  73i,12n,104p,2313b,6136s stack positions out of 5000i,500n,10000p,200000b,50000s
