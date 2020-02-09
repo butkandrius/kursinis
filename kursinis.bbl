@@ -320,6 +320,43 @@
       \field{title}{Learning Fine-grained Image Similarity with Deep Ranking}
       \field{year}{2014}
     \endentry
+    \entry{Person_reindentification}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=6ff875d568e20a3db0a9c0131f45ebb2}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zhizheng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=7078cf72a5968bd804aa5a60e2d08529}{%
+           family={Lan},
+           familyi={L\bibinitperiod},
+           given={Cuiling},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e8334f86b999537613328a0033bd95eb}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Wenjun},
+           giveni={W\bibinitperiod}}}%
+        {{hash=18dc21ba371100b5e6f3bd88a675373e}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhibo},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{38e05e26993f1137e0fefb3cb8585e78}
+      \strng{fullhash}{38e05e26993f1137e0fefb3cb8585e78}
+      \strng{bibnamehash}{38e05e26993f1137e0fefb3cb8585e78}
+      \strng{authorbibnamehash}{38e05e26993f1137e0fefb3cb8585e78}
+      \strng{authornamehash}{38e05e26993f1137e0fefb3cb8585e78}
+      \strng{authorfullhash}{38e05e26993f1137e0fefb3cb8585e78}
+      \field{labelalpha}{ZLZ\textsuperscript {+}19}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Densely Semantically Aligned Person Re-Identification}
+      \field{year}{2019}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

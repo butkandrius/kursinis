@@ -2141,6 +2141,7 @@
     <bcf:citekey order="12">Learning_fine_grained_image</bcf:citekey>
     <bcf:citekey order="13">Learning_fine_grained_image</bcf:citekey>
     <bcf:citekey order="14">Performance_of_GPU</bcf:citekey>
+    <bcf:citekey order="15">Person_reindentification</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">
