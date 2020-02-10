@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2020.2.2)  10 FEB 2020 20:04
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7250 64-bit) (preloaded format=xelatex 2020.2.2)  10 FEB 2020 20:51
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1329,23 +1329,9 @@ File: img/Triplet_network.png Graphic file (type bmp)
 File: img/Triplet_network_branchCNN.png Graphic file (type bmp)
 <img/Triplet_network_branchCNN.png>
  [5]
-Overfull \hbox (168.02646pt too wide) detected at line 120
-\OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W;\OT1/cmr/m/n/12 (\OML/cmm
-/m/it/12 Y; x[]; x[]\OT1/cmr/m/n/12 )) = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5 \
-OMS/cmsy/m/n/12 ^^C \OT1/cmr/m/n/12 (1[]\OML/cmm/m/it/12 Y\OT1/cmr/m/n/12 )(\OM
-L/cmm/m/it/12 D\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W; x[]; x[]\OT1/cmr/m/n/12 ))[
-] + (\OML/cmm/m/it/12 Y\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^C \OT1/cmr/m/n/12 0
-\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5 \OMS/cmsy/m/n/12 ^^C [][]\OT1/cmr/m/n/12 (4
-)\OML/cmm/m/it/12 ; whereD\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W; x[]; x[]\OT1/cmr
-/m/n/12 ) = \OMS/cmsy/m/n/12 jj\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it
-/12 W; x[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
-2 W; x[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 jj\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :
-Y \OT1/cmr/m/n/12 = 1
- []
-
 File: img/Siamese.png Graphic file (type bmp)
 <img/Siamese.png>
-[6] [7] [8]
+ [6] [7] [8]
 File: img/Similarity_precision_diff_CNN.png Graphic file (type bmp)
 <img/Similarity_precision_diff_CNN.png>
 File: img/Similarity_precision.png Graphic file (type bmp)
