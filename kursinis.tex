@@ -47,16 +47,9 @@ Vaizdų panašumo įvertinimas ir lyginimas tampa vis plačiau naudojamas ir sus
 \newline	
 Rinkoje yra siūlomi įvairūs konvoliucinių neuronų tinklų modeliai, pvz.: Alexnet, VGGNet, GoogLetNet, ResNet \cite{Aerial_image_similarity}. Verta paminėti, kad visi šie modeliai turėjo efektyvius atpažinimo rezultatus ILSVRC. Taigi vis dažniau yra pasitelkiama prieš tai minėti trejetų tinklai, kurie optimizuoja bruožų atstumus erdvėje. Visgi sudėtingiausia problema išlieka dėl semantinio tarpo problemos, kuri atsiranda tarp žemos rezoliucijos nuotraukos pikselių užfiksuotų kompiuterinių sistemų ir aukšo lygio semantinių koncpetų, kurias suvokia žmonės. Dėl to reikia rasti geresnių būdų, kaip sugebėti pateikti nuotrauką kompiuteriui ir gauti gilesnias jos semantinius bruožus. 
 \newline
-Todėl šio darbo tikslas yra ištirti esamus rinkoje modelių veikimo principus, jų niuansus bei palyginimą vieną su kitu. Išanalizuoti, kada, kokiomis sąlygomis jie veikia geriausiai. Taigi bus pasirinkta viena iš esamų vaizdų duomenų rinkinių (žmonių siluetų identifikavimo nuotraukos) ir bus treniruojamas trejetų tinklas\cite{Aerial_image_similarity}, analizuojami rezultatai, stebimos problemos.
+Todėl šio darbo tikslas yra pasiūlyti pasrinktą trejetų tinklų modelį \cite{Aerial_image_similarity}, kuris sugebėtų atpažinti žmonių siluetus su pasirinktu duomenų rinkiniu. Palyginti pasirinktą modelį su kitais esamais rinkoje modeliais, palyginti rezultatus. Taip pat išskirti metrikas tam. Surasti su kuriais vaizdais pasirinktas modelis prastai vykdo atpažinimą ir kodėl.
 
 \pagebreak
-\sectionnonum{Tikslas}
-Šio darbo tikslas yra:
-\begin{itemize}
-\item{Išsiaiškinti pasirinkto trejetų tinklo modelio rezultatus, identifikuojant žmonių siluentus viešose erdvėse.}
-\item{Gautus vaizdų palyginimo rezultaus paanalizuoti detaliau, išskirti jų metrikas.}
-\item{Palyginti architektūrą su kitais neuronų tinklų modeliais.}
-\end{itemize}
  
 \sectionnonum{Uždaviniai}
 \thispagestyle{empty}
@@ -71,28 +64,28 @@ Todėl šio darbo tikslas yra ištirti esamus rinkoje modelių veikimo principus
 \section{Trejetų ir Siamo tinklų tyrimų literatūros analizė}
 
 \subsection{Gilieji konvoliuciniai neuronų tinklai}
-Giliajame mokymese, šis tinklas yra klasė iš giliųjų neuronų tinklų, kuri dažniausiai naudojama pritaikant vaizdų atpažinimą. Tai yra algoritmas, kuris įvestyje pasiima vaidą (nuotrauką ar paveiksliuką), priskiria jam svorius ir jos bruožų tendencijas įvairiose nuotraukos dalyse ir sugeba pagal tai atskirti panašumus lyginant su kitomis nuotraukomis.
+Giliajame treniravime(mokyme), šis tinklas yra klasė iš giliųjų neuronų tinklų, kuri dažniausiai naudojama pritaikant vaizdų atpažinimą. Tai yra algoritmas, kuris įvestyje pasiima vaidą (nuotrauką ar paveiksliuką), priskiria jam svorius ir jos bruožų tendencijas įvairiose įvesties dalyse ir sugeba pagal tai atskirti panašumus lyginant su kitomis įvestimis.
 
 \subsection{Trejetų tinklai}
-Trejetų tinklų modelis būvo pasiulytas 2014m., moksliniko Chang Wang\cite{Learning_fine_grained_image}. Modelio veikimo principas susideda iš trijų identiškų konvoliucinių neuroninių tinklų šakų, kurie tapusavyje dalijasi gautais svoriais. Kai trejetų tinklas įvestyje gauna tris pavyzdžius, išvestyje yra grąžinama dvejos tarpinės reikšmės, kurios nurodo atstumus lyginimus su pagrdine įvestimi ir kitomis dvejomis įvestimis, kurių rezultatas yra vektoriai.
+Trejetų tinklų modelis būvo pasiulytas 2014m., moksliniko Chang Wang \cite{Learning_fine_grained_image}. Modelio veikimo principas susideda iš trijų identiškų konvoliucinių neuroninių tinklų šakų, kurie tapusavyje dalijasi gautais svoriais. Kai trejetų tinklas įvestyje gauna tris pavyzdžius, išvestyje yra grąžinama dvejos tarpinės reikšmės, kurios nurodo atstumus lyginamus su pagrdine įvestimi ir kitomis dvejomis įvestimis. Jų rezultatas yra vektoriai. 1pav. parodytas abstraktus treniravimosi procesas, trejetų tinklų modelio.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/Triplet_network}
-\caption{Trejeto tinklo mokymosi procesas \cite{Improved_triplet_network}} % Antraštė įterpiama po paveikslėlio
+\caption{Trejeto tinklo treniravimosi procesas \cite{Improved_triplet_network}} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 \pagebreak
 
 \subsubsection{Architektūra}
-Trejetų tinklų modelis įvedimo dalyje reikalauja trijų įvesčių tuo pačiu metu. Kiekvienas jų turi savo pavadinimą ir reikšmę tinkle, pagrindinis $x^a$, pozityvus $x^p$, negiamas $x^n$. Įvesties poros $x^a$ ir $x^p$ yra tos pačios kategorijos arba panašūs semantiškai įvestys. Tuo metu $x^a$ ir $x^n$ yra skirtingos kategorijos arba nepanašūs visai. Pasitelkiant funkcijas yra apskaičiuojama jų semantiniai panašumai atsumo erdvėje (nes jie yra pateikiami kaip vektoriai). Ši funkcija yra vadinama nuostolių funkcija, jos funkcija aprašyta žemiau. Kur parametras $\alpha$ rodo tarpą tarp $x^a$ ir $x^p$ bei $x^a$ ir $x^n$. $N$ reiškia skaičių nusakantį kiek trejetų įvesčių yra pateikiama. Tikslas yra pasiekti, kad $x^a$ ir $x^p$ būtų mažiau nei $x^a$ ir $x^n$ \cite{Face_recognition}.
+Trejetų tinklų modelis įvedimo dalyje reikalauja trijų įvesčių tuo pačiu metu. Kiekvienas jų turi savo pavadinimą ir reikšmę tinkle, pagrindinis $x^a$, pozityvus $x^p$, neigiamas $x^n$. Įvesties poros $x^a$ ir $x^p$ yra tos pačios kategorijos arba panašūs semantiškai įvestys. Tuo metu $x^a$ ir $x^n$ yra skirtingos kategorijos arba nepanašūs vaizdai. Pasitelkiant funkcijas yra apskaičiuojama jų semantiniai panašumai atstumo erdvėje (nes jie yra pateikiami kaip vektoriai). Ši funkcija yra vadinama nuostolių funkcija, jos galima funkcija aprašyta žemiau. Kur parametras $\alpha$ rodo tarpą tarp $x^a$ ir $x^p$ bei $x^a$ ir $x^n$. $N$ reiškia skaičių nusakantį kiek trejetų įvesčių yra pateikiama. Tikslas yra pasiekti, kad $x^a$ ir $x^p$ būtų mažiau nei $x^a$ ir $x^n$ \cite{Face_recognition}.
 
 \[loss = \sum_{x=1}^{N} max(d(x^a, x^p) - d(x^a, x^n) + \alpha, 0)\]
 Kur $d$ yra atstumo metrika, taip kad $d(x^a, x^p) < d(x^a, x^n)$, o $N$ yra skaičius trejetų.
 
-Nuostolių funkcija nusako, kaip gerai algoritmas modeliuoja pasirinktą duomenų rinkinį. Jeigu prognozė rezultatui yra netiksli, ši funkcija grąžina didesnę reikšmę.
+Nuostolių funkcija nusako, kaip gerai algoritmas modeliuoja pasirinktą duomenų rinkinį. Jeigu prognozė rezultatui yra netiksli, ši funkcija grąžina didesnę reikšmę. Neuroninių tinklų modeliams galima naudoti ir kitas nuostolių funkcijas, priklausomai nuo duomenų rinkinio ir norimo rezultato gauti.
 
 \subparagraph{Alternatyvios nuostolių funkcijos}
-Artima šiai funkcijai yra ši lygtis. Ji naudoja kvadratinį Euklido \cite{Aerial_image_similarity} atstumą kaip atstumo metriką ir $\alpha > 0$, nurodanti ribą tarp dviejų vaizdų ir absoliučios sumos reikšmės.
+Artima šiai funkcijai yra ši lygtis. Ji naudoja kvadratinį Euklido  \cite{Aerial_image_similarity} atstumą kaip atstumo metriką ir $\alpha > 0$, nurodanti ribą tarp dviejų vaizdų ir absoliučios sumos reikšmės.
 \[loss = \sum_{x=1}^{N} [||x^a - x^p|| - ||x^a - x^n|| + \alpha]\]
 
 \begin{figure}[H]
@@ -102,21 +95,21 @@ Artima šiai funkcijai yra ši lygtis. Ji naudoja kvadratinį Euklido \cite{Aeri
 \label{img:mlp}
 \end{figure}
 
-Šis neuroninių tinklų architektūrinis sprendimas padeda apmokyti duomenų klasifikavimą išskaidant duomenis pagal panašumus ir skirtumus. Jų metu keli lygiagretūs gileiji neuroniai tinklai yra apmokami bei tuo pačiu metu jie dalijasi svoriais vieni su kitu treniruojant tinklą. Trejetų tinkle tikslas yra sukurti trejetus, kurie susideda iš pagrindinio $p^a$, teigiamio $x^p$, neigiamio $p^n$ − įvesties elementų. Pagrindinis elementas, tai kažkokia įvestis (nuotrauka, paveiksliukas, muzikos įrašas ir t.t), kuriai mes bandome rasti atitikimą iš kitos įvesties. Teigiama įvestis – panašus elementas atitinkamai pagrindiniai nuotraukai. Tuo tarpu neigiamas elementas skaitosi tas, kuris neturi panašumų su pagrindine nuotrauka. Neuroninai tinklai apskaičiuoja  $\pi : f(\pi) \in$
-Šie trys elementai yra įvedami nepriklausomai vienas nuo kito į  tris identiškus giliuosius neuroninius tinklus, kurie dalijasi vienoda architektūra ir parametrais. Jų metu yra apskaičiuojami atstumai tarp šių elementų. Šiam apskaičiavimui yra naudojama praradimo funkcija.
+Šis neuroninių tinklų architektūrinis sprendimas padeda apmokyti duomenų klasifikavimą išskaidant duomenis pagal panašumus ir skirtumus (2 pav.). Jų metu keli lygiagretūs gileiji neuroniniai tinklai yra apmokami bei tuo pačiu metu jie dalijasi svoriais vieni su kitu treniruojant tinklą. Trejetų tinkle tikslas yra sukurti trejetus, kurie susideda iš pagrindinio $p^a$, teigiamio $x^p$, neigiamio $p^n$ − įvesties elementų. Pagrindinis elementas, tai kažkokia įvestis (nuotrauka, paveiksliukas, muzikos įrašas ir t.t), kuriai mes bandome rasti atitikimą iš kitos įvesties. Teigiama įvestis – panašus elementas atitinkamai pagrindiniai nuotraukai. Tuo tarpu neigiamas elementas skaitosi tas, kuris neturi panašumų su pagrindine nuotrauka. Neuroninai tinklai apskaičiuoja  $\pi : f(\pi) \in$
+Šie trys elementai yra įvedami nepriklausomai vienas nuo kito į  tris identiškus giliuosius neuroninius tinklus, kurie dalijasi vienoda architektūra ir parametrais. Jų metu yra apskaičiuojami atstumai tarp šių elementų. Šiam apskaičiavimui yra naudojama kaip ir prieš tai minėta nuostolių funkcija.
 \newline
 Įmanomi rezultatai trjetų tinkle:
 \begin{itemize}
-\item{Lengvas trejatas: trejetai, kurie turi nuostolį, reikšme 0, nes $d(x^a, x^p) + \alpha < d(x^a, x^p)$}
-\item{Sudėtingas trejetas: trejetai, kurių neigiamumas yra arčiau pagrindinio negu teigiamų, $d(x^a, x^p) < d(x^a, x^p)$}
-\item{Pusiau sudėtingas trejetas: trejetai, kurių neigiamumas nėra arčiau teigiamumo, tačiau vis tiek turi teigiamą nuostolį: $d(x^a, x^n) < d(x^a, x^p) +\alpha$}
+\item{Lengvas trejatas: trejetai, kurie turi nuostolį, su reikšme 0, nes $d(x^a, x^p) + \alpha < d(x^a, x^p)$}
+\item{Sudėtingas trejetas: trejetai, kurių neigiamumas yra arčiau pagrindinio negu teigiamo, $d(x^a, x^p) < d(x^a, x^p)$}
+\item{Pusiau sudėtingas trejetas: trejetai, kurių neigiamumas nėra arčiau teigiamo, tačiau vis tiek turi teigiamą nuostolį: $d(x^a, x^n) < d(x^a, x^p) +\alpha$}
 \end{itemize}
 
 \subsection{Siamo tinklas}
-Pirma kartą publikuotas 1990 metais, autorių Bromely ir Yann LeCun, siekiant išspręsti parašo verifikavimo problema kaip vaizdo atitikimo probelmą\cite{Siamese_signature_verifiction}.
+Pirma kartą publikuotas 1990 metais, autorių Bromely ir Yann LeCun, siekiant išspręsti parašo verifikavimo problema kaip vaizdo atitikimo probelmą \cite{Siamese_signature_verifiction}.
 \subsubsection{Architektūra}
-Tinklo modelis – neuronų tinklas turintys kelis ar daugiau identiškus neuroninių tinkle atšakas su vienodais parameterais\cite{Siamese_Network}. Šis modelis naudoja vienodus svorius vykdant tuo pačiu metu ir panaudojant du skirtingus įvesties vektorius apskaičiuojant palyginamus išvesties vektorius. Šie vienodi tinklai su skiringais įvesties duomenimis yra sujungti pagal energijos funkciją $E$. Ši matematinė funkcija apdoroja kai kurias metrikas tarp labiausiai išryškintų bruožų vaizdavimų kiekvienoje pusėje.
-Parametrai tarp šių vienodų tinkle yra apriboti, kad būtų vienodi. Svorių apjungimas užtikrina, kad du labai panašūs vaizdai nebūtų tarp jų atitinkamų tinkle išvesti labai skirtinguose erdvės lokacijose. Taip pat, reikia paminėti, kad tinklas yra simetriškas, nesvarbu kuriam iš vienodų tinklų įvesime vaizdą, visada gausime tokias pačias metrikas.
+Tinklo modelis – neuronų tinklas turintys kelis ar daugiau identiškus neuroninių tinkle atšakas su vienodais parameterais \cite{Siamese_Network} (panašiai kaip ir trejetų tinklų modelyje). Šis modelis naudoja vienodus svorius vykdant tuo pačiu metu ir panaudojant du skirtingus įvesties vektorius, apskaičiuojant palyginamus išvesties vektorius. Šie vienodi tinklai su skiringais įvesties duomenimis yra sujungti pagal energijos funkciją $E$. Ši matematinė funkcija apdoroja kai kurias metrikas tarp labiausiai išryškintų bruožų vaizdavimų kiekvienoje pusėje.
+Parametrai tarp šių vienodų tinkle yra apriboti, kad būtų vienodi. Svorių apjungimas užtikrina, kad du labai panašūs vaizdai nebūtų tarp jų atitinkamų tinkle  atšakų išvesti labai skirtinguose erdvės lokacijose. Taip pat, reikia paminėti, kad tinklas yra simetriškas, nesvarbu kuriam iš vienodų tinklų įvesime vaizdą, visada gausime tokias pačias metrikas.
 Standartinė išlaidų funkcija skirta mokymosi pavyzdžiui $(x_1, x_2)$ yra pasiūlyta Hadselio. \[L(W,(Y, x_1, x_2)) = 0.5(1 − Y )(D_w)^2 + (Y) 0.5 {max(0, m − D_w)}^2\], jei $(x_1, x_2)$  yra panašios poros, ir $Y = 1$ kitu atveju. $m$ yra riba nurodanti norimą slenkstį atstumui tarp $x_1$ ir $x_2$ jeigu jie nėra panašūs. Dėl laisvo suregualiavimo, dažniausiai taip yra sunkiau ištreniruoti trejetų tinklus negu Siamo tinkle. Tarkime $x_1, x_2$ yra pora vektorių, $Y$ laikysime dvejatainę žymę, kur $Y = 1$ reiškia, kad vektoriai $x_1, x_2$ yra laikomi panašiais, $Y = 0$ - priešingu atveju. $D_w$ - parametrizuota atstumo funkcija (Euklido).
 
 \begin{figure}[H]
@@ -130,7 +123,7 @@ Standartinė išlaidų funkcija skirta mokymosi pavyzdžiui $(x_1, x_2)$ yra pas
 Gilieji konvoliuciniai tinklai reikalauja fiksuoto dydžio įvesties vaizdų. Tačiau realiame gyvenime nuotraukų ar paveiksliukų dydžiai nėra fiksuoti ir varijuoja plačiai.
 \newline
 Jeigu yra bandoma primiktynai pakeisti į reikiama dydį, nuotrauką karpant ar deformuojant, informacija, patalpinta nuotraukose bus prarasta. To pasekoje tikslumas nuotraukų klasifikacijos ar objektų identifikavime bus sumažintas ir nepataisomai sugadintas. Nors neuroniniuose tinkluose, konvoliuciniai sluoksniai nereikaljau fiksuoto dydžio įvesties ir geba generuoti specifinius bruožus vaizdo iš bet kokio dydžio nuotraukų. Visgi, pilnai sujungti sluoksniai privalo turėti fiksuoto dydžio įvestį dėl jų pačių apibrėžimo. Dėl to apribojimas fiksuoto dydžio nuotraukų ateina tik iš pilnai sujungtų sluoksnių reikiamos ypatybės.
-Viena iš šios problemos sprendimo būdų yra naudoti erdvinės piramidės talpinimą\cite{Spatial_pyramid_pooling}.
+Viena iš šios problemos sprendimo būdų yra naudoti erdvinės piramidės talpinimą \cite{Spatial_pyramid_pooling}, tokiu būdų galima bandyti identifikuoti vaizdus, kurių rezoliucijos yra skirtingos.
 \newline
 Šis būdas ištraukia vaizdo bruožus iš bruožų žemėlapio (angl. map) per $4 x 4$, $2 x 2$ ir $1 x 1$ kvadratų tinklelio. Tada SPP sluoksnis pateikia $16 + 4 + 1 = 21$ skirtingus aruodus (angl. bin) ir gauna fiksuoto dydžio išvestį kviečiant kviekvieną bloką. Po erdvinės piramidės talpinimo būdo išgavimo, bet kuris bruožų žemėlapis gali generuoti 5736 dimensijų ypatybių vektorius, kur $5736 = 24 x 26$. SPP sluoksnis pasiima ypatybes ir generuoja  fiksuoto dydžio išvestis, kuris galiausiai yra perduodamas į pilnai sujungtus sluoksnius.
 \pagebreak
@@ -180,14 +173,32 @@ VGG16 yra konvoliucinių neuroninių tinklų modelis, išrastas K. Simonian ir A
 \subsection{Tyrimo rezultatai}
 Šiame darbe buvo bandyta atpažinti detalius vaizdus, naudojant vaizdų duomenų rinkinį CUHK01. Šiame duomenų rinkinyje yra pavaizduota 3884 viešose vietose einančių pėsčiųjų kadrai. Todėl naudojant ši duomenų rinkinį buvo analizuojama, kaip su pasirinktu trejetų modeliu seksis atpažinti skirtingus žmogaus kadrus, kurie buvo nufotografuoti įvairiai -  iš kelių pusių, iš nugaros ir priekio, esant skiringai žmogaus eisenos pozicijai, skirtingam apšvietimui ir kontrastamas, įsiterpiant kitiems objektams prie pėsčiojo.
 \newline
-Ištreniravus trejetų tinklą su pasirinktu duomenų rinkiniu ir pradėjus testuoti jo rezultatus, gavau 85,7\% tikslumo rezultatą. Tai yra gan aukštas įvertinimas, nes atpažinti to paties pėsčiojo skirtingus kadras nėra lengviausia užduotis, nes susiduriame su kliūtimis, aprašytomis anksčiau.
-
+Ištreniravus trejetų tinklą su pasirinktu duomenų rinkiniu ir pradėjus testuoti jo rezultatus, gavau 85,7\% tikslumo rezultatą. Tai yra gan aukštas įvertinimas, nes atpažinti to paties pėsčiojo skirtingus kadras nėra lengviausia užduotis, nes susiduriame su kliūtimis, aprašytomis anksčiau. Jeigu palyginsime kaip sekėsi kitiems neuroninių tinklų modeliams atpažinti būtent šį duomenų rinkinį, turime tokius rezultatus:
+90.4\% , kur neuronų tinklų modelį sukūrė mokslininkai iš Kinijos Mokslų ir Technologijų universiteto. \cite{Person_reindentification}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1.0]{img/Frame_diff.png}
 \caption{Žmogaus skiringi eisenos kadrai} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
+Taip pat, žemiau pateikiu kitus rezultatus, gautus su kitais neuroniais tinklų modeliais:
+
+\begin{center}
+\begin{tabular}{ | m{5em} | m{5em}| } 
+\hline
+Spindle & 94.4\% \\
+\hline
+PSE & 86.6\% \\
+\hline
+Part-Aligned& 94.4\% \\
+\hline
+AACN & 96.7\% \\
+\hline
+\end{tabular}
+\end{center}
+
+\pagebreak
+
 \subsection{Vaizdai su prastais rezultatų palyginimais}
 Visgi ne visi vaizdai buvo tesingai palyginimi ir nustatomi trejetų tinklo modelio. Todėl šiame darbe buvo ieškoma ir nagrinėjama, kurios vaizdų įvestis turėdavo prastus rezultatus bei buvo bandoma išsiaiškinti kas sukeldavo prastus rezultatus.
 
@@ -198,7 +209,7 @@ Visgi ne visi vaizdai buvo tesingai palyginimi ir nustatomi trejetų tinklo mode
 \label{img:mlp}
 \end{figure}
 
-Dauguma nuotraukų, kurios buvo blogai identifikuotos skirėsi viena nuo kitos spalvų intensivumu, skirtingomis spalvomis. Pavyzdžiui matome, kad tiek pirmoje ir antroje nuotraukų porose įsiterpusi nauja žalia spalva (žalumos objektai) leidžia manyti, kad tai yra viena iš priežasčių, kodėl nepavyko tinkamai identifikuoti to paties asmens kadrus. Taip pat antroje poroje matome, kad žmogaus judėjimo kampas į objektyvą skiriasi, o ir nuotraukų šviesos intensyvumas yra kitoks. Todėl tai leidžia daryti prielaida, kad ir vaizdų palyginimo rezultatai bus prasti, jei nuotraukos bus nufotografuotos ne kokybiškai - apšvietimo skirtumai, netvarkingas fonas ar atsiradusi okliuzija\cite{Person_reindentification}.
+Dauguma nuotraukų, kurios buvo blogai identifikuotos skirėsi viena nuo kitos spalvų intensivumu, skirtingomis spalvomis. Pavyzdžiui matome, kad tiek pirmoje ir antroje nuotraukų porose įsiterpusi nauja žalia spalva (žalumos objektai) leidžia manyti, kad tai yra viena iš priežasčių, kodėl nepavyko tinkamai identifikuoti to paties asmens kadrus. Taip pat antroje poroje matome, kad žmogaus judėjimo kampas į objektyvą skiriasi, o ir nuotraukų šviesos intensyvumas yra kitoks. Todėl tai leidžia daryti prielaida, kad ir vaizdų palyginimo rezultatai bus prasti, jei nuotraukos bus nufotografuotos ne kokybiškai - apšvietimo skirtumai, netvarkingas fonas ar atsiradusi okliuzija \cite{Person_reindentification}.
 
 \begin{figure}[H]
 \centering
@@ -210,7 +221,7 @@ Viršuje esančios žmonių nuotraukų poros yra sudėtingai identifikuojamos d�
 
 \pagebreak
 \subsection{Sprendimo būdai}
-Visgi ieškant literatūroje informacijos, kurioje būtų aprašyti sprendimo būdai, kai lyginami vaizdai vienas su kitu yra nekorektiški bruožų atžvilgiu, tačiau panašūs ar priklauso tai pačiai klasei, yra siūlomi keli sprendimų būdai. Pavyzdžiui, ypatybių fokusavimą nukreipiant į lokalias detales buvo sukurtas nesudėtingas suskirstymas asmens nuotraukos į kelias fiksuotas ir nekintančias dalis, pavyzdžiui į horizontales juosteles ir taip mokantis lokalių nuotraukų bruožų atpažinimo. Visgi, kaip tyrimai iš literatūros nurodė toks skirstymas prastai lygina identifikuojamo asmens kūno dalis\cite{Person_reindentification}. Kituose tyrimuose ir bandymuose buvo bandoma naudoti žmogaus pozą, tokiu būdu identifikuojant skirtingas kūno dalis: kojas, rankas, veidą. Tačiau ir toks atpažinimo metodas yra prastas, kad gauti norimus rezultatus, nes identifiuoti tas pačias žmogaus kūno dalis iš skirtingų žmogaus padėčių kelia problemų dėl asmens skirtingos judėjimo pozos nuotraukose\cite{Person_reindentification}.
+Visgi ieškant literatūroje informacijos, kurioje būtų aprašyti sprendimo būdai, kai lyginami vaizdai vienas su kitu yra nekorektiški bruožų atžvilgiu, tačiau panašūs ar priklauso tai pačiai klasei, yra siūlomi keli sprendimų būdai. Pavyzdžiui, ypatybių fokusavimą nukreipiant į lokalias detales buvo sukurtas nesudėtingas suskirstymas asmens nuotraukos į kelias fiksuotas ir nekintančias dalis, pavyzdžiui į horizontales juosteles ir taip mokantis lokalių nuotraukų bruožų atpažinimo. Visgi, kaip tyrimai iš literatūros nurodė toks skirstymas prastai lygina identifikuojamo asmens kūno dalis \cite{Person_reindentification}. Kituose tyrimuose ir bandymuose buvo bandoma naudoti žmogaus pozą, tokiu būdu identifikuojant skirtingas kūno dalis: kojas, rankas, veidą. Tačiau ir toks atpažinimo metodas yra prastas, kad gauti norimus rezultatus, nes identifiuoti tas pačias žmogaus kūno dalis iš skirtingų žmogaus padėčių kelia problemų dėl asmens skirtingos judėjimo pozos nuotraukos \cite{Person_reindentification}.
 \pagebreak
 \section{Rezultatai ir išvados}
 \thispagestyle{empty} 
@@ -226,7 +237,7 @@ Visgi ieškant literatūroje informacijos, kurioje būtų aprašyti sprendimo b�
 \item{Pasirinktas trejetų tinklų modelis parodė neblogus rezultatus identifikuojant žmonių eisenos kadrus.}
 \item{Identifikuojant žmones nuotraukose susiduriama su rimtomis problemomis, kai to paties žmogaus nuotraukos skiriasi dėl pašalinių priežasčių. Kas lemia kad žmonių identifikacija yra sudėtingas procesas, kuris tam tikroms nuotraukoms neturi sprendimo būdų.}
 \end{enumerate}
-\subsection{Rekomendacijos ateities darbams}
+\subsection{Ateities darbai}
 \begin{enumerate}
 \item{Išbandyti kitą trejetų modelį su pasiūlytais būdais, kurie gebėtų dar geriau atpažinti žmonių siluetus}
 \item{Atlikti atpažinimo rezultatų analizę su kitis neuronų tinklais.}
