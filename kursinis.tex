@@ -21,7 +21,7 @@
 \department{Programų sistemų katedra}
 \papertype{Kursinis darbas}
 \title{Detalus vaizdų panašumas naudojant trejetų tinklus}
-\titleineng{Fine-grained Images Similarity using triplet-network}
+\titleineng{Fine-grained Images Similarity using Triplet-network}
 \status{4 kurso 6 grupės studentas}
 \author{Andrius Butkevičius}
 % \secondauthor{Vardonis Pavardonis} % Pridėti antrą autorių
@@ -31,7 +31,9 @@
 % Nustatymai
 % \setmainfont{Palemonas} % Pakeisti teksto šriftą į Palemonas (turi būti įdiegtas sistemoje)
 \bibliography{bibliografija}
-
+\let\[\relax \let\]\relax % avoid warnings in the log file
+\DeclareRobustCommand{\[}{\begin{equation}}
+\DeclareRobustCommand{\]}{\end{equation}}
 \begin{document}
 
 \maketitle
@@ -67,7 +69,7 @@ Todėl šio darbo tikslas yra pasiūlyti pasrinktą trejetų tinklų modelį \ci
 Giliajame treniravime(mokyme), šis tinklas yra klasė iš giliųjų neuronų tinklų, kuri dažniausiai naudojama pritaikant vaizdų atpažinimą. Tai yra algoritmas, kuris įvestyje pasiima vaidą (nuotrauką ar paveiksliuką), priskiria jam svorius ir jos bruožų tendencijas įvairiose įvesties dalyse ir sugeba pagal tai atskirti panašumus lyginant su kitomis įvestimis.
 
 \subsection{Trejetų tinklai}
-Trejetų tinklų modelis būvo pasiulytas 2014m., moksliniko Chang Wang \cite{Learning_fine_grained_image}. Modelio veikimo principas susideda iš trijų identiškų konvoliucinių neuroninių tinklų šakų, kurie tapusavyje dalijasi gautais svoriais. Kai trejetų tinklas įvestyje gauna tris pavyzdžius, išvestyje yra grąžinama dvejos tarpinės reikšmės, kurios nurodo atstumus lyginamus su pagrdine įvestimi ir kitomis dvejomis įvestimis. Jų rezultatas yra vektoriai. 1pav. parodytas abstraktus treniravimosi procesas, trejetų tinklų modelio.
+Trejetų tinklų modelis būvo pasiulytas 2014m., moksliniko Chang Wang \cite{Learning_fine_grained_image}. Modelio veikimo principas susideda iš trijų identiškų konvoliucinių neuroninių tinklų šakų, kurie tapusavyje dalijasi gautais svoriais. Kai trejetų tinklas įvestyje gauna tris pavyzdžius, išvestyje yra grąžinama dvejos tarpinės reikšmės, kurios nurodo atstumus lyginamus su pagrdine įvestimi ir kitomis dvejomis įvestimis. Jų rezultatas yra vektoriai. 1 pav. parodytas abstraktus treniravimosi procesas, trejetų tinklų modelio.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/Triplet_network}
@@ -95,7 +97,7 @@ Artima šiai funkcijai yra ši lygtis. Ji naudoja kvadratinį Euklido  \cite{Aer
 \label{img:mlp}
 \end{figure}
 
-Šis neuroninių tinklų architektūrinis sprendimas padeda apmokyti duomenų klasifikavimą išskaidant duomenis pagal panašumus ir skirtumus (2 pav.). Jų metu keli lygiagretūs gileiji neuroniniai tinklai yra apmokami bei tuo pačiu metu jie dalijasi svoriais vieni su kitu treniruojant tinklą. Trejetų tinkle tikslas yra sukurti trejetus, kurie susideda iš pagrindinio $p^a$, teigiamio $x^p$, neigiamio $p^n$ − įvesties elementų. Pagrindinis elementas, tai kažkokia įvestis (nuotrauka, paveiksliukas, muzikos įrašas ir t.t), kuriai mes bandome rasti atitikimą iš kitos įvesties. Teigiama įvestis – panašus elementas atitinkamai pagrindiniai nuotraukai. Tuo tarpu neigiamas elementas skaitosi tas, kuris neturi panašumų su pagrindine nuotrauka. Neuroninai tinklai apskaičiuoja  $\pi : f(\pi) \in$
+Šis neuroninių tinklų architektūrinis sprendimas padeda apmokyti duomenų klasifikavimą išskaidant duomenis pagal panašumus ir skirtumus 2 pav.. Jų metu keli lygiagretūs gileiji neuroniniai tinklai yra apmokami bei tuo pačiu metu jie dalijasi svoriais vieni su kitu treniruojant tinklą. Trejetų tinkle tikslas yra sukurti trejetus, kurie susideda iš pagrindinio $p^a$, teigiamio $x^p$, neigiamio $p^n$ − įvesties elementų. Pagrindinis elementas, tai kažkokia įvestis (nuotrauka, paveiksliukas, muzikos įrašas ir t.t), kuriai mes bandome rasti atitikimą iš kitos įvesties. Teigiama įvestis – panašus elementas atitinkamai pagrindiniai nuotraukai. Tuo tarpu neigiamas elementas skaitosi tas, kuris neturi panašumų su pagrindine nuotrauka. Neuroninai tinklai apskaičiuoja  $\pi : f(\pi) \in$
 Šie trys elementai yra įvedami nepriklausomai vienas nuo kito į  tris identiškus giliuosius neuroninius tinklus, kurie dalijasi vienoda architektūra ir parametrais. Jų metu yra apskaičiuojami atstumai tarp šių elementų. Šiam apskaičiavimui yra naudojama kaip ir prieš tai minėta nuostolių funkcija.
 \newline
 Įmanomi rezultatai trjetų tinkle:
@@ -133,28 +135,69 @@ Kelios įvertinimų metrikos yra naudojamos: panašumo tikslumas bei \emph{score
 \pagebreak
 
 \subsection{Pasirenkami duomenis įvertinimui analizuoti}
-Kadangi darbo tema susijusi su detalių vaizdų panašumu, kuris negali būti charakterizuotas pagal paveikslėlių žymes, buvo panaudota trejetų duomenų rinkinys įvertinant vaizdo panašumus modeliams.
+Kadangi darbo tema susijusi su detaliu vaizdų atpažinimuu, kuris negali būti charakterizuotas pagal vaizdų kategorijų žymes, literatūroje buvo surasta informacijos, panaudojant trejetų duomenų rinkinys norint įvertinti nuotraukų panašumus su skirtingais modeliams \cite{Learning_fine_grained_image}.
 Buvo paimta 1000 populiariausių teksto užklausų su atrinktais trejetais $(x^a, x^p, x^n)$ su Google 50 paieškos rezultatų kiekvienai užklausai \cite{Learning_fine_grained_image}.
 
-Efektyvumas yra nurodomas pirmoje lentelėje. "DeepRanking" parodytas lentelėje yra gilusis reitingavimo modelis treniruotas su 20% neigiamais pavyzdžiais. Pastebima, kad jokia individualus bruožas be treniravimo nepasiekia gerų rezultatų
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.7]{img/Similarity_precision_diff_CNN}
-\caption{anašumo tikslumo metrikų rezultatai \cite{Learning_fine_grained_image}} % Antraštė įterpiama po paveikslėlio
-\label{img:mlp}
-\end{figure}
+Atpažinimo efektyvumas pagal metrikas yra nurodytas 1 lentelė ir 2 lentelė. "DeepRanking", kuris  paminėtas buvo literatūroej, yra gilusis reitingavimo modelis treniruotas su 20\% neigiamais pavyzdžiais. Visgi pastebima, kad joks vaizdų atpažinimo modelis be treniravimo nepasiekia gerų rezultatų ir nėra dinamiškai prisitaikantys prie naujo duomenų rinkinio, kuris priklauso kitoms vaizdų klasifikacijos kategerijoms. L1HashKCPA pasiekė visai neblogą rezultatą su ganėtinai mažai dimensijų, tačiau jo našumas yra ganėtinai prastesnis negu "DeepRanking" metodo.
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.7]{img/Similarity_precision}
-\caption{Panašumo tikslumo metrikų rezultatai \cite{Learning_fine_grained_image}} % Antraštė įterpiama po paveikslėlio
-\label{img:mlp}
-\end{figure}
+\begin{center}
+\begin{tabular}{ | m{10em} | m{5em}| m {3em} |} 
+\hline
+Metodas & Tikslumas & Score-30 \\
+\hline
+ConvNet & 82.8\% & 5772 \\
+\hline
+Single-scare Ranking & 84.6\% & 6245 \\
+\hline
+OASIS on Single-scale Ranking & 82.5\%  & 6263 \\
+\hline
+Single-Scale $\&$ Visual Feature & 84.1\% & 6765 \\
+\hline
+DeepRanking & 85.7\% & 7004\\
+\hline
+\end{tabular}
+\captionof{table}{Tikslumo metrikų rezultatai (1)}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ | m{10em} | m{5em}| m {3em} |} 
+\hline
+Metodas & Tikslumas & Score-30 \\
+\hline
+Wavelet & 62.2\% & 2735\\
+\hline
+Color & 62.3\% & 2935 \\
+\hline
+SIFT-like & 65.5\%  & 2863 \\
+\hline
+Fisher $\&$ Visual Feature & 67.2\% & 3064\\
+\hline
+HOG & 85.7\% & 7004\\
+\hline
+SPMKtexton1024max & 66.5\% & 3556\\
+\hline
+L1HashKPCA & 76.2\% & 6356\\
+\hline
+OASIS & 79.2\% & 6813\\
+\hline
+Golden Features & 80.3\% & 7165 \\
+\hline
+DeepRanking & 85.7\% & 7004\\
+\hline
+\end{tabular}
+\captionof{table}{Tikslumo metrikų rezultatai (2)}
+\end{center}
+
 \pagebreak
 
 \section{Trejetų tinklo vaizdų atpažinimo tyrimas ir vertinimas}
-\subsection{Kaip išspręsti semantines vazidų skirtumo problemas}
-Norint pagerinti atsirandančias vaizdų problemas, aprašytas viršuje
+\subsection{Tikslumo metrikos}
+Šiame darbe buvo naudojama tikslumo metrika (4), kuri nauodojoma dvejatainių klasifikatorių vertinime.
+
+\[ accuracy=\frac{\sum  \ \ \textrm{Teigiamas} + \sum \ \ \textrm{Neigiamas} }{\sum \ \ \textrm{Visa populiacija} } \]
+
+Kadangi yra labai retas atvejis, kad $d(x_a, x_p)$ būtų lygus $d(x_a, x_n)$, galima laikyti, kad $\sum \ \ \textrm{Teigiamas}$ yra lygus $\sum \ \ \textrm{Neigiamas}$. Del to, galima skaičiuoti tik $\sum \ \ \textrm{Teigiamas}$ iš visų įvesties trejetų sumos $N_t$ treniruojamame rinkinyje. Galutinė lygtis (5), kuri naudojama tikslumui lyginti.
+\[ accuracy=\frac{\sum d(x_a, x_p) + \sum d(x_a, x_n) }{ N_t } \]
 
 \subsection{Treniravimo ir testavimo aplinka}
 Trejetų tinklo modelis buvo treniruoamas naudojant Lenovo Y-700 kompiuterį su šiomis specifikacijomis: CPU i7 6700K (4 branduolių), 8GB RAM, GPU Nvidia GTX 960m (4GB RAM). Norint pasileisti trejetų modelį būtent šiam kompiuteriui (priklausomai nuo mašinos tai gali skirtis) buvo atsisiųsta Nvidia CUDA programinė įranga su tikslu, kad modelio treniravimas būtų vykdomas pasitelkiant vaizdo plokštę, o ne procesorių.
@@ -167,7 +210,7 @@ Vaizdų duomenų rinkinyje buvo 3884 nuotraukos, kuriose jau buvo surikiuotos te
 Ištreniravus šiuos duomenis yra bandoma analizuoti modelio tikslumą imant vaizdų pavyzdžius iš testinio duomenų rinkinio.
 
 \subsection{VGG16 tinklo modelis}
-Panaudota architektūra naudoja VGG16 tinklo bazės sluoksnius klasifikavimui todėl tik labai panašūs vaizdai gali būti naudojami duomenų treniravimui tam, kad pagerinti tinklo atlikimą bei išsaugoti skaičiavimo išteklius.
+Šiame darbe, žmonių siluetų atpažinimui yra naudojamas trjetų tinklų modelis \cite{Aerial_image_similarity}, kurio architektūra naudoja VGG16 tinklo bazės sluoksnius klasifikavimui todėl tik labai panašūs vaizdai gali būti naudojami duomenų treniravimui tam, kad pagerinti tinklo atlikimą bei išsaugoti skaičiavimo išteklius.
 \newline
 VGG16 yra konvoliucinių neuroninių tinklų modelis, išrastas K. Simonian ir A. Zisserman (Oksfordo universitetas). Modelis sugeba pasiekti 92.7\% top-5 testų tikslumą (treniravimo duomenys pasiimti iš ImageNet). VGG16 buvo treniruojamas savaitę iš savaitės naudojant Nvidia Titan Black vaizdo plokščių šeimas.
 \subsection{Tyrimo rezultatai}
@@ -184,7 +227,9 @@ Ištreniravus trejetų tinklą su pasirinktu duomenų rinkiniu ir pradėjus test
 Taip pat, žemiau pateikiu kitus rezultatus, gautus su kitais neuroniais tinklų modeliais:
 
 \begin{center}
-\begin{tabular}{ | m{5em} | m{5em}| } 
+\begin{tabular}{ | m{7em} | m{5em}| } 
+\hline
+Modelis & Tikslumas \\
 \hline
 Spindle & 94.4\% \\
 \hline
@@ -195,6 +240,7 @@ Part-Aligned& 94.4\% \\
 AACN & 96.7\% \\
 \hline
 \end{tabular}
+\captionof{table}{CUHK01 duomenų tikslumo rezultatai}
 \end{center}
 
 \pagebreak
@@ -210,6 +256,7 @@ Visgi ne visi vaizdai buvo tesingai palyginimi ir nustatomi trejetų tinklo mode
 \end{figure}
 
 Dauguma nuotraukų, kurios buvo blogai identifikuotos skirėsi viena nuo kitos spalvų intensivumu, skirtingomis spalvomis. Pavyzdžiui matome, kad tiek pirmoje ir antroje nuotraukų porose įsiterpusi nauja žalia spalva (žalumos objektai) leidžia manyti, kad tai yra viena iš priežasčių, kodėl nepavyko tinkamai identifikuoti to paties asmens kadrus. Taip pat antroje poroje matome, kad žmogaus judėjimo kampas į objektyvą skiriasi, o ir nuotraukų šviesos intensyvumas yra kitoks. Todėl tai leidžia daryti prielaida, kad ir vaizdų palyginimo rezultatai bus prasti, jei nuotraukos bus nufotografuotos ne kokybiškai - apšvietimo skirtumai, netvarkingas fonas ar atsiradusi okliuzija \cite{Person_reindentification}.
+\pagebreak
 
 \begin{figure}[H]
 \centering
@@ -219,7 +266,6 @@ Dauguma nuotraukų, kurios buvo blogai identifikuotos skirėsi viena nuo kitos s
 \end{figure}
 Viršuje esančios žmonių nuotraukų poros yra sudėtingai identifikuojamos dėl įvairių priežasčių: a) dėl skirtngo objektyvo kampo, b) skirtingos žmogaus pozos, c) prastos nuotraukos kadro užfiksavimo (susiliejas vaizdas), d) ne vienodame lygyje esančios žmogaus kūno dalis, atsiradusios dėl jo judėjimo, e) netvarkingas fonas, f) okliuzija.
 
-\pagebreak
 \subsection{Sprendimo būdai}
 Visgi ieškant literatūroje informacijos, kurioje būtų aprašyti sprendimo būdai, kai lyginami vaizdai vienas su kitu yra nekorektiški bruožų atžvilgiu, tačiau panašūs ar priklauso tai pačiai klasei, yra siūlomi keli sprendimų būdai. Pavyzdžiui, ypatybių fokusavimą nukreipiant į lokalias detales buvo sukurtas nesudėtingas suskirstymas asmens nuotraukos į kelias fiksuotas ir nekintančias dalis, pavyzdžiui į horizontales juosteles ir taip mokantis lokalių nuotraukų bruožų atpažinimo. Visgi, kaip tyrimai iš literatūros nurodė toks skirstymas prastai lygina identifikuojamo asmens kūno dalis \cite{Person_reindentification}. Kituose tyrimuose ir bandymuose buvo bandoma naudoti žmogaus pozą, tokiu būdu identifikuojant skirtingas kūno dalis: kojas, rankas, veidą. Tačiau ir toks atpažinimo metodas yra prastas, kad gauti norimus rezultatus, nes identifiuoti tas pačias žmogaus kūno dalis iš skirtingų žmogaus padėčių kelia problemų dėl asmens skirtingos judėjimo pozos nuotraukos \cite{Person_reindentification}.
 \pagebreak
@@ -234,7 +280,7 @@ Visgi ieškant literatūroje informacijos, kurioje būtų aprašyti sprendimo b�
 \end{enumerate}
 \subsection{Išvados}
 \begin{enumerate}
-\item{Yra sudėtinga lyginti trejetų tinklų ir Siamo modelius, nes jų architektūra gali varijuota pagal tai kaip modelis yra įgyvendintas. Teisingiau yra lyginti specialius jų sukurtus modelius vienas su kitu.}
+\item{Yra sudėtinga lyginti trejetų ir Siamo modelius, nes jų architektūra gali varijuota pagal tai kaip modelis yra įgyvendintas. Teisingiau yra lyginti specialius jų sukurtus modelius vienas su kitu.}
 \item{Pasirinktas trejetų tinklų modelis parodė neblogus rezultatus identifikuojant žmonių eisenos kadrus.}
 \item{Identifikuojant žmones nuotraukose susiduriama su rimtomis problemomis, kai to paties žmogaus nuotraukos skiriasi dėl pašalinių priežasčių. Kas lemia kad žmonių identifikacija yra sudėtingas procesas, kuris tam tikroms nuotraukoms neturi sprendimo būdų.}
 \end{enumerate}
@@ -243,7 +289,7 @@ Visgi ieškant literatūroje informacijos, kurioje būtų aprašyti sprendimo b�
 \item{Išbandyti kitą trejetų modelį su pasiūlytais būdais, kurie gebėtų dar geriau atpažinti žmonių siluetus}
 \item{Atlikti atpažinimo rezultatų analizę su kitis neuronų tinklais.}
 \item{Ištestuoti su daugiau duomenų rinkinių. Stebėti ir lyginti rezultatus}
-\item{Iškelti savo palyginimo metodą, kuris gebėtų teisingai identifikuoti žmones nuotraukose.}
+\item{Iškelti savo palyginimo metodą, kuris gebėtų teisingai identifikuoti žmonių siluetus nuotraukose.}
 \end{enumerate}
 \pagebreak
 

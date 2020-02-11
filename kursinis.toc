@@ -28,28 +28,28 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.}Trejetų tinklo vaizdų atpažinimo tyrimas ir vertinimas}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.}Kaip išspręsti semantines vazidų skirtumo problemas}{10}%
+\contentsline {subsection}{\numberline {3.1.}Tikslumo metrikos}{10}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.}Treniravimo ir testavimo aplinka}{10}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.}VGG16 tinklo modelis}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.}Tyrimo rezultatai}{10}%
+\contentsline {subsection}{\numberline {3.4.}Tyrimo rezultatai}{11}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.5.}Vaizdai su prastais rezultatų palyginimais}{12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.}Sprendimo būdai}{14}%
+\contentsline {subsection}{\numberline {3.6.}Sprendimo būdai}{13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.}Rezultatai ir išvados}{15}%
+\contentsline {section}{\numberline {4.}Rezultatai ir išvados}{14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.}Rezultatai}{15}%
+\contentsline {subsection}{\numberline {4.1.}Rezultatai}{14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.}Išvados}{15}%
+\contentsline {subsection}{\numberline {4.2.}Išvados}{14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.}Ateities darbai}{15}%
+\contentsline {subsection}{\numberline {4.3.}Ateities darbai}{14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.}Priedai}{16}%
+\contentsline {section}{\numberline {5.}Priedai}{15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.}Žodynas}{16}%
+\contentsline {subsection}{\numberline {5.1.}Žodynas}{15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatūra}{17}%
+\contentsline {section}{Literatūra}{16}%
