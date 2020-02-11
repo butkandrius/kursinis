@@ -211,8 +211,14 @@ Vaizdų duomenų rinkinyje buvo 3884 nuotraukos, kuriose jau buvo surikiuotos te
 Ištreniravus šiuos duomenis yra bandoma analizuoti modelio tikslumą imant vaizdų pavyzdžius iš testinio duomenų rinkinio.
 
 \subsection{VGG16 tinklo modelis}
-Šiame darbe, žmonių siluetų atpažinimui yra naudojamas trjetų tinklų modelis \cite{Aerial_image_similarity}, kurio architektūra naudoja VGG16 tinklo bazės sluoksnius klasifikavimui todėl tik labai panašūs vaizdai gali būti naudojami duomenų treniravimui tam, kad pagerinti tinklo atlikimą bei išsaugoti skaičiavimo išteklius.
-\newline
+Šiame darbe, žmonių siluetų atpažinimui yra naudojamas trjetų tinklų modelis \cite{Aerial_image_similarity}. Modelis naudoja modifikuota nuostolių funkciją: 
+\[loss = \sum_{i+1}^{N_t} [\ln ( - \frac{\sum_{j=1}^{N} (f_o^a - f_o^p)^2 }{\beta} + 1 + \epsilon) + \ln(- \frac{\sum_{j=1}^{N} (f_o^a - f_o^n)^2}{\beta} + 1 + \epsilon)  ] \]
+
+
+Kur $f_o^a$ yra ModelNN išvestis pagrindiniai nuotraukai, $f_o^p$ ir $f_o^n$ yra ModelNN išvestys teigiamai ir neigiamai nuotraukoms. $N$ yra išvesties vektoriaus dimensijos, o  trejetų skaičius treniravimo duomenų rinkinyje. $\epsilon$ yra koks nors mažas skaičius, pvz.: $10^-6$. Nuostolių funkcija yra 0, kai teigiama ir neigiama įvestys yra maksimaliu atstumu viena nuo kitos.  
+Šio modelio architektūra naudoja VGG16 tinklo bazės sluoksnius klasifikavimui todėl tik labai panašūs vaizdai gali būti naudojami duomenų treniravimui tam, kad pagerinti tinklo atlikimą bei išsaugoti skaičiavimo išteklius.
+
+
 VGG16 yra konvoliucinių neuroninių tinklų modelis, išrastas K. Simonian ir A. Zisserman (Oksfordo universitetas). Modelis sugeba pasiekti 92.7\% top-5 testų tikslumą (treniravimo duomenys pasiimti iš ImageNet). VGG16 buvo treniruojamas savaitę iš savaitės naudojant Nvidia Titan Black vaizdo plokščių šeimas.
 \subsection{Tyrimo rezultatai}
 Šiame darbe buvo bandyta atpažinti detalius vaizdus, naudojant vaizdų duomenų rinkinį CUHK01. Šiame duomenų rinkinyje yra pavaizduota 3884 viešose vietose einančių pėsčiųjų kadrai. Todėl naudojant ši duomenų rinkinį buvo analizuojama, kaip su pasirinktu trejetų modeliu seksis atpažinti skirtingus žmogaus kadrus, kurie buvo nufotografuoti įvairiai -  iš kelių pusių, iš nugaros ir priekio, esant skiringai žmogaus eisenos pozicijai, skirtingam apšvietimui ir kontrastamas, įsiterpiant kitiems objektams prie pėsčiojo.
