@@ -21,7 +21,7 @@
 \department{Programų sistemų katedra}
 \papertype{Kursinis darbas}
 \title{Detalus vaizdų panašumas naudojant trejetų tinklus}
-\titleineng{Fine-grained images similarity using triplet-network}
+\titleineng{Fine-grained Images Similarity using triplet-network}
 \status{4 kurso 6 grupės studentas}
 \author{Andrius Butkevičius}
 % \secondauthor{Vardonis Pavardonis} % Pridėti antrą autorių
@@ -43,7 +43,7 @@
 \sectionnonum{Įvadas}
 
 \thispagestyle{empty} 
-Vaizdų panašumo įvertinimas ir lyginimas tampa vis plačiau naudojamas ir susilaukia vis didesnio dėmesio informacinių technologijų srityje.Visgi plėtojant šią technologiją ir siekiant išgauti kuo korektiškesnius rezultatus yra susiduriama su problemomis, nes kompiuteriui nėra lengva atskirti vizualius skirtumus ir objektų bruožų panašumus taip lengvai, kaip palyginus žmogui, kuris gali akimirskniu sugebėti atpažinti aplink jį esamus objektus. Vaizdų identifikavimas ar jų palyginimas plačiai taikomas šiuo metu, pvz.: vaizdinės tapatybės nustatymui, veido atpažinimui, esamos vietovės aptikimui pasitelkient beipiločio orlaivio užfiksuotas reljefo nuotraukas, vaizdų radimui pasitelkiant paieškos sistemas. Norint sugebėti tai atpažinti ir klasifikuoti, yra pasitelkiami įvairūs tinklų modeliai ir jie treniruojami. Tam panaudojama tokie modeliai kaip Siamese arba trejetų tinklai. Šie tinklai susideda iš dviejų ar trijų vienodų ir lygiagrečių konvoliucinių neurono tinkle esančių atšakų, kurios tarpusavyje dalinasi svoriais, kurių dėka galima gauti aukšto lygio nuotraukų bruožų atvaizdavimą taip leidžiant panašioms nuotraukoms būti kuo arčiau sujungtoms viena su kita funkcijų erdvėje. Tuo metu nepanašiems vaizdams – būnant kuo toliau nuo teisingų nuotraukų. 
+Vaizdų panašumo įvertinimas ir lyginimas tampa vis plačiau naudojamas ir susilaukia vis didesnio dėmesio informacinių technologijų srityje.Visgi plėtojant šią technologiją ir siekiant išgauti kuo korektiškesnius rezultatus yra susiduriama su problemomis, nes kompiuteriui nėra lengva atskirti vizualius skirtumus ir objektų bruožų panašumus taip lengvai, kaip palyginus žmogui, kuris gali akimirskniu sugebėti atpažinti aplink jį esamus objektus. Vaizdų identifikavimas ar jų palyginimas plačiai taikomas šiuo metu, pvz.: vaizdinės tapatybės nustatymui, veido atpažinimui, esamos vietovės aptikimui pasitelkient beipiločio orlaivio užfiksuotas reljefo nuotraukas, vaizdų radimui pasitelkiant paieškos sistemas. Norint sugebėti tai atpažinti ir klasifikuoti, yra pasitelkiami įvairūs tinklų modeliai ir jie treniruojami. Tam panaudojama tokie modeliai kaip Siamo arba trejetų tinklai. Šie tinklai susideda iš dviejų ar trijų vienodų ir lygiagrečių konvoliucinių neurono tinkle esančių atšakų, kurios tarpusavyje dalinasi svoriais, kurių dėka galima gauti aukšto lygio nuotraukų bruožų atvaizdavimą taip leidžiant panašioms nuotraukoms būti kuo arčiau sujungtoms viena su kita funkcijų erdvėje. Tuo metu nepanašiems vaizdams – būnant kuo toliau nuo teisingų nuotraukų. 
 \newline	
 Rinkoje yra siūlomi įvairūs konvoliucinių neuronų tinklų modeliai, pvz.: Alexnet, VGGNet, GoogLetNet, ResNet \cite{Aerial_image_similarity}. Verta paminėti, kad visi šie modeliai turėjo efektyvius atpažinimo rezultatus ILSVRC. Taigi vis dažniau yra pasitelkiama prieš tai minėti trejetų tinklai, kurie optimizuoja bruožų atstumus erdvėje. Visgi sudėtingiausia problema išlieka dėl semantinio tarpo problemos, kuri atsiranda tarp žemos rezoliucijos nuotraukos pikselių užfiksuotų kompiuterinių sistemų ir aukšo lygio semantinių koncpetų, kurias suvokia žmonės. Dėl to reikia rasti geresnių būdų, kaip sugebėti pateikti nuotrauką kompiuteriui ir gauti gilesnias jos semantinius bruožus. 
 \newline
@@ -68,7 +68,7 @@ Todėl šio darbo tikslas yra ištirti esamus rinkoje modelių veikimo principus
 \end{enumerate}
 
 \pagebreak
-\section{Trejetų ir Siamese tinklų tyrimų literatūros analizė}
+\section{Trejetų ir Siamo tinklų tyrimų literatūros analizė}
 
 \subsection{Gilieji konvoliuciniai neuronų tinklai}
 Giliajame mokymese, šis tinklas yra klasė iš giliųjų neuronų tinklų, kuri dažniausiai naudojama pritaikant vaizdų atpažinimą. Tai yra algoritmas, kuris įvestyje pasiima vaidą (nuotrauką ar paveiksliuką), priskiria jam svorius ir jos bruožų tendencijas įvairiose nuotraukos dalyse ir sugeba pagal tai atskirti panašumus lyginant su kitomis nuotraukomis.
@@ -112,17 +112,17 @@ Artima šiai funkcijai yra ši lygtis. Ji naudoja kvadratinį Euklido \cite{Aeri
 \item{Pusiau sudėtingas trejetas: trejetai, kurių neigiamumas nėra arčiau teigiamumo, tačiau vis tiek turi teigiamą nuostolį: $d(x^a, x^n) < d(x^a, x^p) +\alpha$}
 \end{itemize}
 
-\subsection{Siamese tinklas}
+\subsection{Siamo tinklas}
 Pirma kartą publikuotas 1990 metais, autorių Bromely ir Yann LeCun, siekiant išspręsti parašo verifikavimo problema kaip vaizdo atitikimo probelmą\cite{Siamese_signature_verifiction}.
 \subsubsection{Architektūra}
 Tinklo modelis – neuronų tinklas turintys kelis ar daugiau identiškus neuroninių tinkle atšakas su vienodais parameterais\cite{Siamese_Network}. Šis modelis naudoja vienodus svorius vykdant tuo pačiu metu ir panaudojant du skirtingus įvesties vektorius apskaičiuojant palyginamus išvesties vektorius. Šie vienodi tinklai su skiringais įvesties duomenimis yra sujungti pagal energijos funkciją $E$. Ši matematinė funkcija apdoroja kai kurias metrikas tarp labiausiai išryškintų bruožų vaizdavimų kiekvienoje pusėje.
 Parametrai tarp šių vienodų tinkle yra apriboti, kad būtų vienodi. Svorių apjungimas užtikrina, kad du labai panašūs vaizdai nebūtų tarp jų atitinkamų tinkle išvesti labai skirtinguose erdvės lokacijose. Taip pat, reikia paminėti, kad tinklas yra simetriškas, nesvarbu kuriam iš vienodų tinklų įvesime vaizdą, visada gausime tokias pačias metrikas.
-Standartinė išlaidų funkcija skirta mokymosi pavyzdžiui $(x_1, x_2)$ yra pasiūlyta Hadselio. \[L(W,(Y, x_1, x_2)) = 0.5(1 − Y )(D_w)^2 + (Y) 0.5 {max(0, m − D_w)}^2\], jei $(x_1, x_2)$  yra panašios poros, ir $Y = 1$ kitu atveju. $m$ yra riba nurodanti norimą slenkstį atstumui tarp $x_1$ ir $x_2$ jeigu jie nėra panašūs. Dėl laisvo suregualiavimo, dažniausiai taip yra sunkiau ištreniruoti trejetų tinklus negu Siamese tinkle. Tarkime $x_1, x_2$ yra pora vektorių, $Y$ laikysime dvejatainę žymę, kur $Y = 1$ reiškia, kad vektoriai $x_1, x_2$ yra laikomi panašiais, $Y = 0$ - priešingu atveju. $D_w$ - parametrizuota atstumo funkcija (Euklido).
+Standartinė išlaidų funkcija skirta mokymosi pavyzdžiui $(x_1, x_2)$ yra pasiūlyta Hadselio. \[L(W,(Y, x_1, x_2)) = 0.5(1 − Y )(D_w)^2 + (Y) 0.5 {max(0, m − D_w)}^2\], jei $(x_1, x_2)$  yra panašios poros, ir $Y = 1$ kitu atveju. $m$ yra riba nurodanti norimą slenkstį atstumui tarp $x_1$ ir $x_2$ jeigu jie nėra panašūs. Dėl laisvo suregualiavimo, dažniausiai taip yra sunkiau ištreniruoti trejetų tinklus negu Siamo tinkle. Tarkime $x_1, x_2$ yra pora vektorių, $Y$ laikysime dvejatainę žymę, kur $Y = 1$ reiškia, kad vektoriai $x_1, x_2$ yra laikomi panašiais, $Y = 0$ - priešingu atveju. $D_w$ - parametrizuota atstumo funkcija (Euklido).
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1.0]{img/Siamese}
-\caption{Siamese tiklų modelis} % Antraštė įterpiama po paveikslėlio
+\caption{Siamo tiklų modelis} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 
@@ -216,13 +216,13 @@ Visgi ieškant literatūroje informacijos, kurioje būtų aprašyti sprendimo b�
 \thispagestyle{empty} 
 \subsection{Rezultatai}
 \begin{enumerate}
-\item{Trejetų tinklai palyginti su Siamese modeliu, išskirti trūkumai ir privalumai.}
+\item{Trejetų tinklai palyginti su Siamo modeliu, išskirti trūkumai ir privalumai.}
 \item{Išskirti esamų tyrimų trūkumai}
 \item{Aprašyti trjetų tinklų pasirinktas architektūros modelis.}
 \end{enumerate}
 \subsection{Išvados}
 \begin{enumerate}
-\item{Yra sudėtinga lyginti trejetų tinklų ir Siamese modelius, nes jų architektūra gali varijuota pagal tai kaip modelis yra įgyvendintas. Teisingiau yra lyginti specialius jų sukurtus modelius vienas su kitu.}
+\item{Yra sudėtinga lyginti trejetų tinklų ir Siamo modelius, nes jų architektūra gali varijuota pagal tai kaip modelis yra įgyvendintas. Teisingiau yra lyginti specialius jų sukurtus modelius vienas su kitu.}
 \item{Pasirinktas trejetų tinklų modelis parodė neblogus rezultatus identifikuojant žmonių eisenos kadrus.}
 \item{Identifikuojant žmones nuotraukose susiduriama su rimtomis problemomis, kai to paties žmogaus nuotraukos skiriasi dėl pašalinių priežasčių. Kas lemia kad žmonių identifikacija yra sudėtingas procesas, kuris tam tikroms nuotraukoms neturi sprendimo būdų.}
 \end{enumerate}
