@@ -2,54 +2,72 @@
 \defcounter {refsection}{0}\relax 
 \selectlanguage *{lithuanian}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Įvadas}{2}%
+\contentsline {section}{Padėka}{2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Uždaviniai}{3}%
+\contentsline {section}{Santrauka}{3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.}Trejetų ir Siamo tinklų tyrimų literatūros analizė}{4}%
+\contentsline {section}{Summary}{4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.}Gilieji konvoliuciniai neuronų tinklai}{4}%
+\contentsline {section}{Įvadas}{5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.}Trejetų tinklai}{4}%
+\contentsline {section}{\numberline {1.}Konvoliucinių neuroninių tinklų analizė}{7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1.}Architektūra}{5}%
+\contentsline {subsection}{\numberline {1.1.}Gilieji konvoliuciniai neuronų tinklai}{7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Alternatyvios nuostolių funkcijos}{5}%
+\contentsline {subsubsection}{\numberline {1.1.1.}Hyper parametrai}{8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.}Siamo tinklas}{6}%
+\contentsline {subsubsection}{\numberline {1.1.2.}Adam optimizavimo algoritmas}{8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.1.}Architektūra}{6}%
+\contentsline {subsubsection}{\numberline {1.1.3.}Konvoliucinis sluoksnis}{9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.}Nefiksuoto dydžio vaizdai konvoliuciniuose tinkluose}{7}%
+\contentsline {subsubsection}{\numberline {1.1.4.}Sutelkimo sluoksnis}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.}Įvertinimo funkcija}{8}%
+\contentsline {subsubsection}{\numberline {1.1.5.}Pilnai sujungtas sluoksnis}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.}Pasirenkami duomenis įvertinimui analizuoti}{9}%
+\contentsline {subsection}{\numberline {1.2.}Konvoliucinių tinklų privalumai}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.}Trejetų tinklo vaizdų atpažinimo tyrimas ir vertinimas}{10}%
+\contentsline {section}{\numberline {2.}Trejetų ir Siamo analizė}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.}Tikslumo metrikos}{10}%
+\contentsline {subsection}{\numberline {2.1.}Trejetų tinklai}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.}Treniravimo ir testavimo aplinka}{10}%
+\contentsline {subsubsection}{\numberline {2.1.1.}Tinklo komponentai}{12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.}VGG16 tinklo modelis}{10}%
+\contentsline {subparagraph}{Alternatyvios nuostolių funkcijos}{12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.}Tyrimo rezultatai}{11}%
+\contentsline {subsection}{\numberline {2.2.}Siamo tinklas}{13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.}Vaizdai su prastais rezultatų palyginimais}{12}%
+\contentsline {subsubsection}{\numberline {2.2.1.}Tinklo komponentai}{13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.}Sprendimo būdai}{13}%
+\contentsline {subsection}{\numberline {2.3.}Nefiksuoto dydžio vaizdai konvoliuciniuose tinkluose}{14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.}Rezultatai ir išvados}{14}%
+\contentsline {section}{\numberline {3.}Įvertinimo funkcija}{15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.}Rezultatai}{14}%
+\contentsline {subsection}{\numberline {3.1.}Asmens pakartotinis identifikavimas}{16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.}Išvados}{14}%
+\contentsline {subsection}{\numberline {3.2.}Pasirenkami duomenis įvertinimui analizuoti}{16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.}Ateities darbai}{14}%
+\contentsline {section}{\numberline {4.}Trejetų tinklo vaizdų atpažinimo tyrimas ir vertinimas}{18}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.}Priedai}{15}%
+\contentsline {subsection}{\numberline {4.1.}Tikslumo metrikos}{18}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.}Žodynas}{15}%
+\contentsline {subsection}{\numberline {4.2.}Apmokymo ir testavimo aplinka}{18}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatūra}{16}%
+\contentsline {subsection}{\numberline {4.3.}VGG16 tinklo modelis}{18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.}Tyrimo rezultatai}{20}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5.}Vaizdai su prastais rezultatų palyginimais}{22}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.}Sprendimo būdai}{23}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.}Rezultatai ir išvados}{24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.}Rezultatai}{24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.}Išvados}{24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.}Ateities darbai}{24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.}Priedai}{25}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.}Žodynas}{25}%
